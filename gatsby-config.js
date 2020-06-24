@@ -245,6 +245,7 @@ module.exports = {
               enableCustomId: true,
             },
           },
+          'gatsby-remark-katex',
           {
             resolve: 'gatsby-remark-prismjs',
             options: {
