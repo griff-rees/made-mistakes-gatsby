@@ -263,7 +263,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    aboutImage: file(relativePath: { eq: "michael-rose-glitched.jpg" }) {
+    aboutImage: file(relativePath: { eq: "dream_play.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 720, maxHeight: 480, quality: 75) {
           ...GatsbyImageSharpFluid_noBase64
