@@ -75,6 +75,11 @@
   --grid-list-exp-col-gap: 3rem;
   --col-list-gap: 1rem;
   --col-list-width: calc(33.3333% - var(--col-list-gap));
+
+  /* Custom */
+  --art-color: #f69220;
+  --sci-color: #7157a4;
+  --accent-color: #f00;
 }
 
 /* Dark mode */
