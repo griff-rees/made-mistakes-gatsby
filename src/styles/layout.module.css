@@ -162,6 +162,7 @@ kbd,
 samp,
 pre {
   font-family: var(--monospace-font);
+  color: var(--kbd-text-color);
 }
 
 pre {

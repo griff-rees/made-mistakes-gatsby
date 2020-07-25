@@ -454,3 +454,18 @@ p > .gatsby-resp-image-wrapper {
     margin-bottom: 0;
   }
 }
+
+/* Custom */
+
+h1 a.art {
+  color: var(--art-color-inverted);
+}
+
+h1 a.sci {
+  color: var(--sci-color-inverted);
+}
+
+h1 a.accent {
+  color: var(--accent-color);
+  text-decoration: none;
+}

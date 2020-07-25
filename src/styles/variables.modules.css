@@ -77,8 +77,11 @@
   --col-list-width: calc(33.3333% - var(--col-list-gap));
 
   /* Custom */
+  --kbd-text-color: #111;
   --art-color: #f69220;
+  --art-color-inverted: color-mod(var(--art-color) lightness(72.5%));
   --sci-color: #7157a4;
+  --sci-color-inverted: color-mod(var(--sci-color) lightness(72.5%));
   --accent-color: #f00;
 }
 
@@ -95,6 +98,12 @@
   --code-background-color: #1a1a1d;
   --button-text-color: #111;
   --button-background-color: #fff;
+
+  /* Custom */
+  --art-color: #fabd78;
+  --art-color-inverted: #f69220;
+  --sci-color: #b2a3ce;
+  --sci-color-inverted: #7157a4;
 }
 
 /* Media queries */
