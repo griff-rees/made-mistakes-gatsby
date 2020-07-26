@@ -38,21 +38,33 @@ module.exports = {
     feedUrl: site.feedUrl,
 
     // Site config
-    copyrights: `&copy; 2004&mdash;${new Date().getFullYear()} <a href="https://mademistakes.com/humans.txt">Michael Rose</a>. Some Rights Reserved.<br />Built in Buffalo, New York. (<a href="https://github.com/mmistakes/made-mistakes-gatsby" rel="nofollow">view source</a>)`,
+    copyrights: `&copy; 2019&mdash;${new Date().getFullYear()} <a href="https://griffithrees.com/humans.txt">Griffith Rees</a>. Some Rights Reserved.<br />Forked from <a href="https://github.com/mmistakes/made-mistakes-gatsby" rel="nofollow">Making Mistakes</a>)`,
     defaultTheme: 'light',
     postsPerPage: 10,
     mainMenu: [
+      // {
+      //   title: 'Articles',
+      //   path: '/articles/',
+      // },
+      // {
+      //   title: 'Notes',
+      //   path: '/notes/',
+      // },
+      // {
+      //   title: 'Works',
+      //   path: '/work/',
+      // },
       {
-        title: 'Articles',
-        path: '/articles/',
+        title: 'Art',
+        path: '/art/',
       },
       {
-        title: 'Notes',
-        path: '/notes/',
+        title: 'Science',
+        path: '/sci/',
       },
       {
-        title: 'Works',
-        path: '/work/',
+        title: 'Thoughts',
+        path: '/thoughts/',
       },
       {
         title: 'About',

@@ -30,16 +30,17 @@ const HomePage = ({ data }) => {
         <div className={style.title}>
           <h1 className={style.heading}>
             <span>
-              Made Mistakes is the personal site of{' '}
-              <a href="/about/">Michael&nbsp;Rose</a>.
+              The <a href="/art/" class="art">art</a>, {' '}
+              <a href="/sci/" class="sci">research</a> and{' '}
+              <a href="/thoughts/">thoughts</a> of{' '}
+              <a href="/about/">Griffith&nbsp;Rees</a>
+              <a href="http://box3spool5.org" class="accent">.</a>
             </span>
           </h1>
           <div className={style.intro}>
             <p>
-              I'm just another boring, tattooed, time traveling designer from
-              Buffalo New York who enjoys eating chicken wings, sketching on an
-              iPad Pro, building with static site generators, and playing
-              Nintendo Switch.
+              Meanders through theatre, film, code, verse, and strands
+              of research sprinkled with opinions all my own.
             </p>
           </div>
           <Img
@@ -128,6 +129,14 @@ const HomePage = ({ data }) => {
                   title="Notes"
                   path="/notes/"
                   excerpt="<p>Thoughts, inspiration, mistakes, and other minutia you&rsquo;d find in a blog.</p>"
+                />
+              </li>
+              <li key="thoughts">
+                <Entry
+                  key="thoughts-home-link"
+                  title="Thoughts"
+                  path="/thoughts/"
+                  excerpt="<p>An exceprt</p>"
                 />
               </li>
               <li key="works">

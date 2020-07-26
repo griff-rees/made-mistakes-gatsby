@@ -24,6 +24,10 @@
   excerpt:
   html:
 
+- id: code
+  excerpt:
+  html:
+
 - id: design
   excerpt:
   html:
@@ -176,6 +180,12 @@
 - id: tutorial
   excerpt:
   html:
+
+- id: thoughts
+  name: Thoughts
+  excerpt: Meanders, pondering and forays through and beyond art and science.
+  html: |
+    <p>Meanders, pondering and forays through and beyond art and science.</p>
 
 - id: twins
   excerpt:

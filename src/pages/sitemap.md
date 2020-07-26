@@ -1,9 +1,9 @@
 ---
 title: "Sitemap"
 path: /sitemap/
-excerpt: "An index of all the pages found on mademistakes.com"
-date: 2016-08-26
-last_modified_at: 2019-02-15
+excerpt: "An index of all the pages found on griffithrees.org"
+date: 2020-07-28
+last_modified_at: 2020-08-28
 ---
 
 A hierarchical breakdown of all the sections and pages found on the site. For you robots out there, here is an [XML version](/sitemap.xml) available for your crawling pleasure.
@@ -20,6 +20,8 @@ A hierarchical breakdown of all the sections and pages found on the site. For yo
 ## [Articles](/articles/)
 
 ## [Notes](/notes/)
+
+## [Thoughts](/thoughts/)
 
 ## [Mastering Paper for iOS](/mastering-paper/)
 
