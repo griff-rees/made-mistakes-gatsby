@@ -38,7 +38,7 @@ module.exports = {
     feedUrl: site.feedUrl,
 
     // Site config
-    copyrights: `&copy; 2019&mdash;${new Date().getFullYear()} <a href="https://griffithrees.com/humans.txt">Griffith Rees</a>. Some Rights Reserved.<br />Forked from <a href="https://github.com/mmistakes/made-mistakes-gatsby" rel="nofollow">Making Mistakes</a>)`,
+    copyrights: `&copy; 2019&mdash;${new Date().getFullYear()} <a href="https://griffithrees.com/humans.txt">Griffith Rees</a>. Some Rights Reserved.<br />Forked from <a href="https://github.com/mmistakes/made-mistakes-gatsby" rel="nofollow">Making Mistakes</a>`,
     defaultTheme: 'light',
     postsPerPage: 10,
     mainMenu: [
