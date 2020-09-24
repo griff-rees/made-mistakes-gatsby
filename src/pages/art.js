@@ -28,14 +28,14 @@ const ArtPage = ({ data }) => {
       <main id="main" className={style.main}>
         <div className={style.title}>
           <h1 className={style.heading}>
-            <span>Art</span>
+            <span class="art">§Art</span>
           </h1>
         </div>
         <div className={style.content}>
           <div className={style.intro}>
             <p>
               Theatre, film, poetry and design. Some collaboration
-              with <a href="/sci/">science</a>.
+              with <a href="/sci/" class="sci">science</a>.
             </p>
           </div>
           <h2 className={style.subHeading}>

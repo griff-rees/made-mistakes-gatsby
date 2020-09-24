@@ -31,14 +31,14 @@ const SciencePage = ({ data }) => {
       <main id="main" className={style.main}>
         <div className={style.title}>
           <h1 className={style.heading}>
-            <span>Science</span>
+            <span class="sci">&#8734;Science</span>
           </h1>
         </div>
         <div className={style.content}>
           <div className={style.intro}>
             <p>
               Data &#38; Social&mdash;with meanders toward
-              harder&mdash;sciences. Some brushes with <a href="/art/">art</a>.
+              harder&mdash;sciences. Some brushes with <a href="/art/" class="art">art</a>.
             </p>
           </div>
           <h2 className={style.subHeading}>
