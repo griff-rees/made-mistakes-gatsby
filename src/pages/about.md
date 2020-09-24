@@ -71,4 +71,4 @@ Kind of keep off the social media world but occasionally I'll appear in the foll
   </li>
 </ul>
 
-[^rmarkdown]: Gatspy's markdown is similar to [RMarkdown](https://rmarkdown.rstudio.com/)).
+[^rmarkdown]: Gatspy's markdown is similar to [RMarkdown](https://rmarkdown.rstudio.com/).
