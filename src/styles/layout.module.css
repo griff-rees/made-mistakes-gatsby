@@ -158,11 +158,10 @@ textarea:required {
 }
 
 code,
-kbd,
 samp,
 pre {
   font-family: var(--monospace-font);
-  color: var(--kbd-text-color);
+  color: var(--code-text-color);
 }
 
 pre {
@@ -186,6 +185,7 @@ kbd {
   margin: 0 0.125em;
   padding: 0.125em 0.5em;
   text-shadow: 0 1px 0 #fff;
+  color: var(--kbd-text-color);
 }
 
 dt {
