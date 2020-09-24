@@ -18,7 +18,8 @@
   --input-background-color: #f2f2f2;
   --button-text-color: #fff;
   --button-background-color: #111;
-  --code-text-color: #111;
+  /*--code-text-color: #111;*/
+  --code-text-color: #a9a9b3;
   --code-background-color: #f5f5f6;
   --theme-toggle-primary-color: #f2f2f2;
   --theme-toggle-secondary-color: #111;
@@ -61,6 +62,10 @@
   --monospace-font: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
     monospace;
 
+  /* Custome Typography */
+  --art-font: 'Trattatello', var(--serif-font);
+  --sci-font: 'PT Sans', var(--sans-serif-font);
+
   /* Other */
   --border-radius: 0.125rem;
   --global-transition: all 0.4s ease;
@@ -79,9 +84,9 @@
   /* Custom */
   --kbd-text-color: #111;
   --art-color: #f69220;
-  --art-color-inverted: color-mod(var(--art-color) lightness(72.5%));
+  --art-color-inverted: color-mod(var(--art-color) lightness(72.5%)); /*#fabd82*/
   --sci-color: #7157a4;
-  --sci-color-inverted: color-mod(var(--sci-color) lightness(72.5%));
+  --sci-color-inverted: color-mod(var(--sci-color) lightness(72.5%)); /*#b2a3ce*/
   --accent-color: #f00;
 }
 

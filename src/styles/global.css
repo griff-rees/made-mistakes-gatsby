@@ -457,17 +457,33 @@ p > .gatsby-resp-image-wrapper {
 
 /* Custom */
 
+.art {
+  font-family: var(--art-font)!important;
+  color: var(--art-color)!important;
+  font-size: var(--base-font-size);
+}
+
+.sci {
+  font-family: var(--sci-font)!important;
+  font-weight: bold;
+  color: var(--sci-color)!important;
+  font-size: var(--base-font-size);
+}
+
+.accent {
+  color: var(--accent-color)!important;
+}
+
 h1 {
-  a.art {
-    color: var(--art-color-inverted);
+  a.art, span.art {
+    color: var(--art-color-inverted)!important;
   }
 
-  a.sci {
-    color: var(--sci-color-inverted);
+  a.sci, span.sci  {
+    color: var(--sci-color-inverted)!important;
   }
 
   a.accent {
-    color: var(--accent-color);
     text-decoration: none;
   }
 }

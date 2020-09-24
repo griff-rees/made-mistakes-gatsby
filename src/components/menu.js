@@ -14,6 +14,8 @@ const MainMenu = ({ mainMenu }) => {
         itemProp="url"
         activeStyle={{ textDecoration: 'line-through' }}
         partiallyActive
+        className={(menuItem.path == '/art/' || menuItem.path == '/sci/') ?
+                   menuItem.path.slice(1, 4) : null}
       >
         {menuItem.title}
       </Link>
