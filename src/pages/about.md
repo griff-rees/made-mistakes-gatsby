@@ -2,7 +2,7 @@
 title: "About Griffith Rees"
 path: /about/
 date: 2020-08-17
-last_modified_at: 2020-09-24T22:23:06
+last_modified_at: 2020-09-24T23:41:44
 excerpt: "Griffith Rees is an artist and researcher, stumbling through code to straddle creativity and research."
 # image: ../images/dream_play.jpg
 ---
@@ -35,7 +35,7 @@ I'm probably scripping ideas on paper and keyboards. Decided it might be nice to
 
 ## About the site
 
-First full dive into JavaScript having been sheltered in Python for years. Surreal but fascinating. Once again heavily indebted to [**Made Mistakes**](https://mademistakes.com/), with further nods to [Gatsby](https://www.gatsbyjs.org/) and [Markdown](https://www.gatsbyjs.com/guides/markdown/) (and its similarity to [RMarkdown](https://rmarkdown.rstudio.com/)).
+First full dive into JavaScript having been sheltered in Python for years. Surreal but fascinating. Once again heavily indebted to [**Made Mistakes**](https://mademistakes.com/), with further nods to [Gatsby](https://www.gatsbyjs.org/) and [Markdown](https://www.gatsbyjs.com/guides/markdown/)[^rmarkdown].
 
 ## Me on the internet
 
@@ -70,3 +70,5 @@ Kind of keep off the social media world but occasionally I'll appear in the foll
     </div>
   </li>
 </ul>
+
+[^rmarkdown]: Gatspy's markdown is similar to [RMarkdown](https://rmarkdown.rstudio.com/)).
