@@ -31,7 +31,7 @@ const HomePage = ({ data }) => {
           <h1 className={style.heading}>
             <span>
               The <a href="/art/" class="art">art</a>, {' '}
-              <a href="/sci/" class="sci">research</a> and{' '}
+              <a href="/sci/" class="sci">science</a> and{' '}
               <a href="/thoughts/">thoughts</a> of{' '}
               <a href="/about/">Griffith&nbsp;Rees</a>
               <a href="http://box3spool5.org" class="accent">.</a>
