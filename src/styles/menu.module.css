@@ -41,6 +41,7 @@
   a,
   a:visited {
     color: var(--text-color);
+    font-family: var(--serif-font);
   }
 
   a:focus,
