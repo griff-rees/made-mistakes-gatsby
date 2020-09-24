@@ -2,7 +2,7 @@
 title: "Contact"
 path: /contact/
 date: 2020-09-24
-last_modified_at: 2020-09-24T21:31:48-00:00
+last_modified_at: 2020-09-24T22:20:25
 excerpt: "Preferred methods of sending your questions, inquires, messages, and love letters to me."
 ---
 
