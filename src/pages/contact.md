@@ -8,34 +8,39 @@ excerpt: "Preferred methods of sending your questions, inquires, messages, and l
 
 Want to get in touch? Try [on Twitter](https://twitter.com/griff_rees) or use the form below:
 
-<form id="form1" name="form1" accept-charset="UTF-8" autocomplete="off" enctype="multipart/form-data" method="post" novalidate action="https://griffithrees.wufoo.com/forms/m1d7mgzo0panxyx/#public">
-  <div class="form-group">
-    <label id="title7" for="Field7">Name
-      <input id="Field7" name="Field7" type="text" spellcheck="false" maxlength="255" required>
+<form class="form-group" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+  <div hidden aria-hidden="true">
+    <label>
+      Don’t fill this out if you're human: 
+      <input name="bot-field" />
     </label>
   </div>
-  <div class="form-group">
-    <label id="title3" for="Field3">Email address <small>(will remain private)</small>
-      <input id="Field3" name="Field3" type="email" spellcheck="false" maxlength="255" required pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?">
+  <div>
+    <label for="name">Name
+      <input name="name" type="text" spellcheck="false"
+      maxlength="255" required
+      title="Your name, however you'd like it written." />
     </label>
   </div>
-  <div class="form-group">
-    <label id="title4" for="Field4">Message
-      <textarea id="Field4" name="Field4" spellcheck="true" rows="10" cols="50" required></textarea>
+  <div>
+    <label for="email">Email address
+      <input type="email" name="email" placeholder="Email"
+      id="email" required maxlenght="255" spellcheck="false"
+      title="An email address to reply to, maximum 255 characters." />
     </label>
   </div>
-  <div class="form-group">
-    <label id="title6" for="Field6">How&rsquo;d you hear about my website?
-      <input id="Field6" name="Field6" type="text" maxlength="255" placeholder="e.g. Searching the web">
+  <div>
+    <label for="message">Message
+      <textarea name="message" spellcheck="true" rows="10"
+      required title="Your message, currently only plain text allowed!" />
+      </textarea>
     </label>
   </div>
-  <div class="form-group">
-    <button id="saveForm" name="saveForm" class="btn submit" type="submit">Send message</button>
-  </div>
-  <div class="form-group hidden">
-    <label for="comment">Do not fill this out
-      <textarea name="comment" id="comment" rows="1" cols="1"></textarea>
-      <input type="hidden" id="idstamp" name="idstamp" value="iHxQClDynR1Fd39u+rrxZ9c+AZOXoE8cXNkUJ76KWnQ=">
+  <div>
+    <label for="referral">How&rsquo;d you hear about my website?
+      <input name="referral" type="text" maxlength="255"
+      placeholder="e.g. Searching the web" />
     </label>
   </div>
+  <button id="saveForm" name="saveForm" class="btn submit" type="submit">Send message</button>
 </form>
