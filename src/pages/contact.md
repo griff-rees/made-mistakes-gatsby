@@ -8,10 +8,11 @@ excerpt: "Preferred methods of sending your questions, inquires, messages, and l
 
 Want to get in touch? Try [on Twitter](https://twitter.com/griff_rees) or use the form below:
 
-<form class="form-group" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+<form class="form-group" name="contact" method="POST" data-netlify="true"
+netlify-honeypot="bot-field" action="/contact/thanks">
   <div hidden aria-hidden="true">
     <label>
-      Don’t fill this out if you're human: 
+      Don’t fill this out if you're a person: 
       <input name="bot-field" />
     </label>
   </div>
