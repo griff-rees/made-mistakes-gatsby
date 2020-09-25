@@ -18,29 +18,23 @@ netlify-honeypot="bot-field" action="/contact/thanks">
   </div>
   <div>
     <label for="name">Name
-      <input name="name" type="text" spellcheck="false"
-      maxlength="255" required
-      title="Your name, however you'd like it written." />
+      <input name="name" type="text" spellcheck="false" maxlength="255" required placeholder="Your name" />
     </label>
   </div>
   <div>
     <label for="email">Email address
-      <input type="email" name="email" placeholder="Email"
-      id="email" required maxlenght="255" spellcheck="false"
-      title="An email address to reply to, maximum 255 characters." />
+      <input type="email" name="email" placeholder="Email to respond to" id="email" required maxlenght="255" spellcheck="false" title="An email address to reply to, maximum 255 characters." />
     </label>
   </div>
   <div>
     <label for="message">Message
-      <textarea name="message" spellcheck="true" rows="10"
-      required title="Your message, currently only plain text allowed!" />
+      <textarea name="message" spellcheck="true" rows="10" required placeholder="Your message, currently only plain text allowed!" />
       </textarea>
     </label>
   </div>
   <div>
     <label for="referral">How&rsquo;d you hear about my website?
-      <input name="referral" type="text" maxlength="255"
-      placeholder="e.g. Searching the web" />
+      <input name="referral" type="text" maxlength="255" placeholder="e.g. Searching the web" />
     </label>
   </div>
   <button id="saveForm" name="saveForm" class="btn submit" type="submit">Send message</button>
