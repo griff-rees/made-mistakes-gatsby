@@ -8,6 +8,7 @@ import Layout from '../components/layout'
 import Document from '../components/document'
 import CommentsList from '../components/comments/comments-list'
 // import CommentForm from '../components/comments/comment-form'
+import Gallery from '../components/gallery'
 import Pagination from '../components/pagination'
 import site from '../../config/site'
 
@@ -39,7 +40,7 @@ const PostTemplate = ({ data, pageContext }) => {
     id,
     html,
   } = data.markdownRemark
-  const { comments } = data
+  const { galleryPosts, comments } = data
   const { next, previous } = pageContext
   const metaImage = image ? image.childImageSharp.fixed : site.image
   const twitterCardType = image ? 'summary_large_image' : 'summary'
@@ -84,6 +85,7 @@ const PostTemplate = ({ data, pageContext }) => {
           previousPost={previous}
           nextPost={next}
         />
+        <Gallery galleryList={galleryPosts} />
         <section className={style.comments}>
           {commentsEnabled && (
             <>
@@ -161,6 +163,7 @@ export const pageQuery = graphql`
         comments
         comments_locked
         hide_meta
+        gallery_categories
       }
       id
       html
@@ -168,6 +171,7 @@ export const pageQuery = graphql`
       timeToRead
       tableOfContents(pathToSlugField: "frontmatter.path", maxDepth: 3)
     }
+    ...galleryFragment
     ...commentsQueryFragment
   }
 `

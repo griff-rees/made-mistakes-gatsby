@@ -191,6 +191,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       comments_locked: Boolean
       hide_meta: Boolean
       _parent: String!
+      gallery_categories: [String]
     }
 
     type TaxonomyYaml implements Node {
