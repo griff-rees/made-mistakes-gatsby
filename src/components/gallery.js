@@ -2,25 +2,27 @@ import React from 'react'
 import Masonry from 'react-masonry-component'
 import Img from 'gatsby-image'
 import PropTypes from 'prop-types'
-import { useStaticQuery, graphql, Link } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 
 import style from '../styles/document.module.css'
 
+const MAX_POSTS_PER_RENDER = 20
+//
 // This would normally be in a Redux store or some other global data store.
 if (typeof window !== `undefined`) {
-  window.postsToShow = 20
+  window.postsToShow = MAX_POSTS_PER_RENDER
 }
 
 class Gallery extends React.Component {
   constructor() {
     super()
-    let postsToShow = 20
+    let postsToShow = MAX_POSTS_PER_RENDER
     if (typeof window !== `undefined`) {
       postsToShow = window.postsToShow
     }
 
     this.state = {
-      showingMore: postsToShow > 20,
+      showingMore: postsToShow > MAX_POSTS_PER_RENDER,
       postsToShow,
     }
   }
@@ -46,14 +48,16 @@ class Gallery extends React.Component {
       document.documentElement.offsetHeight -
       (window.pageYOffset + window.innerHeight)
     if (this.state.showingMore && distanceToBottom < 100) {
-      this.setState(prevState => ({ postsToShow: prevState.postsToShow + 20 }))
+      this.setState(prevState => ({
+        postsToShow: prevState.postsToShow + MAX_POSTS_PER_RENDER,
+      }))
     }
     this.ticking = false
   }
 
   render() {
-    const posts = this.props.data.allMarkdownRemark.edges.map(e => e.node)
-    const postsSize = this.props.data.allMarkdownRemark.edges.length
+    const posts = this.props.galleryList.edges.map(e => e.node)
+    const postsSize = this.props.galleryList.edges.length
 
     return (
       <div className={style.gallery}>
@@ -76,14 +80,14 @@ class Gallery extends React.Component {
           })}
         </Masonry>
         {postsSize <= this.postsToShow ||
-          (!this.state.showingMore && (
+          (!this.state.showingMore && postsSize > MAX_POSTS_PER_RENDER && (
             <button
               type="button"
               data-testid="load-more"
               className={style.loadMore}
               onClick={() => {
                 this.setState({
-                  postsToShow: this.state.postsToShow + 20,
+                  postsToShow: this.state.postsToShow + MAX_POSTS_PER_RENDER,
                   showingMore: true,
                 })
               }}
@@ -97,40 +101,46 @@ class Gallery extends React.Component {
 }
 
 Gallery.propTypes = {
-  data: PropTypes.object.isRequired,
-  // gallery_category: PropTypes.string,
+  galleryList: PropTypes.object,
 }
 
-export const galleryQuery = useStaticQuery(graphql`
-  query GalleryQuery($galleryCategory: String) {
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { categories: { in: $galleryCategory } } }
-    ) {
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            image {
-              childImageSharp {
-                fluid(maxHeight: 400, quality: 75) {
-                  ...GatsbyImageSharpFluid_noBase64
-                }
-              }
-            }
-            thumbnail {
-              childImageSharp {
-                fluid(maxHeight: 400, quality: 75) {
-                  ...GatsbyImageSharpFluid_noBase64
-                }
-              }
-            }
+export const galleryByCategory = graphql`
+  fragment galleryByCategory on MarkdownRemark {
+    id
+    frontmatter {
+      title
+      path
+      image {
+        id
+        childImageSharp {
+          fluid(maxHeight: 400, quality: 75) {
+            ...GatsbyImageSharpFluid_noBase64
+          }
+        }
+      }
+      thumbnail {
+        id
+        childImageSharp {
+          fluid(maxWidth: 400, quality: 75) {
+            ...GatsbyImageSharpFluid_noBase64
           }
         }
       }
     }
   }
-`)
+
+  fragment galleryFragment on Query {
+    galleryPosts: allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { gallery_categories: { in: [$path] } } }
+    ) {
+      edges {
+        node {
+          ...galleryByCategory
+        }
+      }
+    }
+  }
+`
 
 export default Gallery
