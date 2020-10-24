@@ -73,6 +73,8 @@ class Gallery extends React.Component {
                   <Img
                     fluid={image.childImageSharp.fluid}
                     backgroundColor="var(--input-background-color)"
+                    title={post.frontmatter.title}
+                    alt={post.frontmatter.excerpt}
                   />
                 </Link>
               </div>
@@ -109,6 +111,7 @@ export const galleryByCategory = graphql`
     id
     frontmatter {
       title
+      excerpt
       path
       image {
         id
