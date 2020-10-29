@@ -5,6 +5,8 @@ import Img from 'gatsby-image'
 
 import style from '../styles/document.module.css'
 
+import ExtraDetail from './extra-detail'
+
 const _ = require('lodash-addons')
 
 const Document = ({
@@ -20,6 +22,7 @@ const Document = ({
   toc,
   tableOfContents,
   tags,
+  extraDetails,
   html,
 }) => {
   return (
@@ -81,7 +84,6 @@ const Document = ({
           ) : null}
         </div>
       </div>
-
       {image && (
         <Img
           fluid={image.childImageSharp.fluid}
@@ -89,7 +91,6 @@ const Document = ({
           backgroundColor="var(--input-background-color)"
         />
       )}
-
       {toc && (
         <details className={style.tocWrap}>
           <summary className={style.tocTitle}>Table of contents</summary>
@@ -99,11 +100,11 @@ const Document = ({
           />
         </details>
       )}
-
       <div
         className={`${style.content} e-content`}
         dangerouslySetInnerHTML={{ __html: html }}
       />
+      {extraDetails && <ExtraDetail extraDetails={extraDetails} />}
     </article>
   )
 }
@@ -122,6 +123,7 @@ Document.propTypes = {
   tableOfContents: PropTypes.string,
   html: PropTypes.string,
   tags: PropTypes.array,
+  extraDetails: PropTypes.array,
 }
 
 export default Document

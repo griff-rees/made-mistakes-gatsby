@@ -30,6 +30,7 @@ const PostTemplate = ({ data, pageContext }) => {
       excerpt,
       tags,
       toc,
+      extra_details,
       comments: commentsEnabled,
       comments_locked: commentsLocked,
       hide_meta: hideMeta,
@@ -82,6 +83,7 @@ const PostTemplate = ({ data, pageContext }) => {
           image={image}
           html={html}
           tags={tags}
+          extraDetails={extra_details}
           previousPost={previous}
           nextPost={next}
         />
@@ -147,6 +149,7 @@ export const pageQuery = graphql`
         author
         excerpt
         tags
+        ...detailsFragment
         image {
           childImageSharp {
             fluid(maxWidth: 1100, quality: 75) {
