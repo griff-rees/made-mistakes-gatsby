@@ -8,7 +8,6 @@ const ExtraDetail = ({ extraDetails }) => {
   return extraDetails.map(extraDetail => (
     <details className={style.detailWrap}>
       <summary className={style.detailTitle}>{extraDetail.title}</summary>
-      {console.log(extraDetail)}
       {extraDetail.items &&
         extraDetail.items.map(detailItem => (
           <dl className={style.detailContent}>
