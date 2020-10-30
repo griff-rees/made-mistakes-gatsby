@@ -48,7 +48,7 @@ class Gallery extends React.Component {
       document.documentElement.offsetHeight -
       (window.pageYOffset + window.innerHeight)
     if (this.state.showingMore && distanceToBottom < 100) {
-      this.setState(prevState => ({
+      this.setState(({ prevState }) => ({
         postsToShow: prevState.postsToShow + MAX_POSTS_PER_RENDER,
       }))
     }

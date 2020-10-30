@@ -5,11 +5,11 @@ import PropTypes from 'prop-types'
 import style from '../styles/extra-details.module.css'
 
 const ExtraDetail = ({ extraDetails }) => {
-  return extraDetails.map(extraDetail => (
+  return extraDetails.map(({ extraDetail }) => (
     <details className={style.detailWrap}>
       <summary className={style.detailTitle}>{extraDetail.title}</summary>
       {extraDetail.items &&
-        extraDetail.items.map(detailItem => (
+        extraDetail.items.map(({ detailItem }) => (
           <dl className={style.detailContent}>
             <dt>{detailItem.item}</dt>
             <dd>
@@ -36,6 +36,7 @@ ExtraDetail.propTypes = {
   // text: PropTypes.array,
   extraDetails: PropTypes.array,
   extraDetail: PropTypes.object,
+  detailItem: PropTypes.object,
 }
 
 export const extraDetailsFragment = graphql`
