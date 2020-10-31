@@ -31,6 +31,7 @@ const PostTemplate = ({ data, pageContext }) => {
       tags,
       toc,
       extra_details,
+      gallery,
       comments: commentsEnabled,
       comments_locked: commentsLocked,
       hide_meta: hideMeta,
@@ -87,7 +88,7 @@ const PostTemplate = ({ data, pageContext }) => {
           previousPost={previous}
           nextPost={next}
         />
-        <Gallery galleryList={galleryPosts} />
+        <Gallery galleryPosts={galleryPosts} galleryFrontmatter={gallery} />
         <section className={style.comments}>
           {commentsEnabled && (
             <>
@@ -166,6 +167,7 @@ export const pageQuery = graphql`
         comments
         comments_locked
         hide_meta
+        ...galleryByFrontmatterFragment
         gallery_categories
       }
       id
@@ -174,7 +176,7 @@ export const pageQuery = graphql`
       timeToRead
       tableOfContents(pathToSlugField: "frontmatter.path", maxDepth: 3)
     }
-    ...galleryFragment
+    ...galleryPostsFragment
     ...commentsQueryFragment
   }
 `

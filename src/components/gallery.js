@@ -4,26 +4,27 @@ import Img from 'gatsby-image'
 import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 
+import site from '../../config/site'
 import style from '../styles/document.module.css'
 
-const MAX_POSTS_PER_RENDER = 20
+const MAX_POSTS_PER_RENDER = site.galleryImagePerPage
 //
 // This would normally be in a Redux store or some other global data store.
 if (typeof window !== `undefined`) {
-  window.postsToShow = MAX_POSTS_PER_RENDER
+  window.picturesToShow = MAX_POSTS_PER_RENDER
 }
 
 class Gallery extends React.Component {
   constructor() {
     super()
-    let postsToShow = MAX_POSTS_PER_RENDER
+    let picturesToShow = MAX_POSTS_PER_RENDER
     if (typeof window !== `undefined`) {
-      postsToShow = window.postsToShow
+      picturesToShow = window.picturesToShow
     }
 
     this.state = {
-      showingMore: postsToShow > MAX_POSTS_PER_RENDER,
-      postsToShow,
+      showingMore: picturesToShow > MAX_POSTS_PER_RENDER,
+      picturesToShow,
     }
   }
 
@@ -33,7 +34,7 @@ class Gallery extends React.Component {
 
   componentWillUnmount() {
     window.removeEventListener(`scroll`, this.handleScroll)
-    window.postsToShow = this.state.postsToShow
+    window.picturesToShow = this.state.picturesToShow
   }
 
   handleScroll = () => {
@@ -49,47 +50,65 @@ class Gallery extends React.Component {
       (window.pageYOffset + window.innerHeight)
     if (this.state.showingMore && distanceToBottom < 100) {
       this.setState(({ prevState }) => ({
-        postsToShow: prevState.postsToShow + MAX_POSTS_PER_RENDER,
+        picturesToShow: prevState.picturesToShow + MAX_POSTS_PER_RENDER,
       }))
     }
     this.ticking = false
   }
 
   render() {
-    const posts = this.props.galleryList.edges.map(e => e.node)
-    const postsSize = this.props.galleryList.edges.length
+    const posts = this.props.galleryPosts.edges.map(e => e.node)
+    const frontmatterImages = this.props.galleryFrontmatter
+      ? this.props.galleryFrontmatter.map(e => e)
+      : []
+    const gallery = posts.concat(frontmatterImages)
+    const postsSize = this.props.galleryPosts.edges.length
+    const gallerySize = postsSize + frontmatterImages.length
 
     return (
       <div className={style.gallery}>
         <Masonry className={style.grid}>
-          {posts.slice(0, this.state.postsToShow).map(post => {
-            const image = post.frontmatter.thumbnail
-              ? post.frontmatter.thumbnail
-              : post.frontmatter.image
+          {gallery.slice(0, this.state.picturesToShow).map(picture => {
+            const image = picture.image
+              ? picture.image
+              : picture.frontmatter.thumbnail
+              ? picture.frontmatter.thumbnail
+              : picture.frontmatter.image
+            const backgroundColor = 'var(--input-background-color)'
 
             return (
-              <div key={post.id} className={style.gridItem}>
-                <Link to={post.frontmatter.path}>
+              <div key={picture.id || image.id} className={style.gridItem}>
+                {picture.frontmatter ? (
+                  <Link to={picture.frontmatter.path}>
+                    <Img
+                      fluid={image.childImageSharp.fluid}
+                      backgroundColor={backgroundColor}
+                      title={picture.frontmatter.title}
+                      alt={picture.frontmatter.excerpt}
+                    />
+                  </Link>
+                ) : (
                   <Img
                     fluid={image.childImageSharp.fluid}
-                    backgroundColor="var(--input-background-color)"
-                    title={post.frontmatter.title}
-                    alt={post.frontmatter.excerpt}
+                    backgroundColor={backgroundColor}
+                    title={picture.title}
+                    alt={picture.exceprt}
                   />
-                </Link>
+                )}
               </div>
             )
           })}
         </Masonry>
-        {postsSize <= this.postsToShow ||
-          (!this.state.showingMore && postsSize > MAX_POSTS_PER_RENDER && (
+        {gallerySize <= this.picturesToShow ||
+          (!this.state.showingMore && gallerySize > MAX_POSTS_PER_RENDER && (
             <button
               type="button"
               data-testid="load-more"
               className={style.loadMore}
               onClick={() => {
                 this.setState({
-                  postsToShow: this.state.postsToShow + MAX_POSTS_PER_RENDER,
+                  picturesToShow:
+                    this.state.picturesToShow + MAX_POSTS_PER_RENDER,
                   showingMore: true,
                 })
               }}
@@ -103,10 +122,25 @@ class Gallery extends React.Component {
 }
 
 Gallery.propTypes = {
-  galleryList: PropTypes.object,
+  galleryPosts: PropTypes.object,
+  galleryFrontmatter: PropTypes.object,
 }
 
-export const galleryByCategory = graphql`
+export const gallerys = graphql`
+  fragment galleryByFrontmatterFragment on Frontmatter {
+    gallery {
+      title
+      image {
+        id
+        childImageSharp {
+          fluid(maxHeight: 400, quality: 75) {
+            ...GatsbyImageSharpFluid_noBase64
+          }
+        }
+      }
+    }
+  }
+
   fragment galleryByCategory on MarkdownRemark {
     id
     frontmatter {
@@ -132,7 +166,7 @@ export const galleryByCategory = graphql`
     }
   }
 
-  fragment galleryFragment on Query {
+  fragment galleryPostsFragment on Query {
     galleryPosts: allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { gallery_categories: { in: [$path] } } }

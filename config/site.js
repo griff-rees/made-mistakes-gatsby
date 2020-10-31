@@ -2,7 +2,8 @@ module.exports = {
   // pathPrefix: '/', // Prefix for all links. If you deploy your site to example.com/portfolio your pathPrefix should be "portfolio"
   title: 'Griffith Rees', // Navigation and site title
   titleAlt: 'Griffith Rees', // Title for schema.org JSONLD
-  description: 'Personal site artist and researcher Griffith Rees (@griff_rees).',
+  description:
+    'Personal site of artist and researcher Griffith Rees (@griff_rees).',
   url: 'https://griffithrees.netlify.app', // Domain of your site. No trailing slash!
   siteLanguage: 'en', // Language Tag on <html> element
   image: {
@@ -11,6 +12,7 @@ module.exports = {
     width: 384,
     height: 384,
   },
+  galleryImagePerPage: 20,
   ogLanguage: 'en_US', // Facebook Language
   pingbackUrl: 'https://webmention.io/mademistakes.com/xmlrpc',
   webmentionUrl: 'https://webmention.io/mademistakes.com/webmention',
@@ -78,5 +80,5 @@ module.exports = {
     siteKey: '6LdRBykTAAAAAFB46MnIu6ixuxwu9W1ihFF8G60Q',
     secret:
       'uK2DH+wELCxTtM0MmfKfT0W5GPt0B+dGVZ3L4IeYtnKRQ7a/zkdRUmi0z6J7K4BumST/CKuKnk4l3EUpDxWnA0E29kpMzbmhukm0vXCZfGg6zLETxcPXTWcrRchAp59oe77OdRlXjNe01nqL6fohmFv5lBT1SrxfORvBxvSsyTrrBXG1b5JJLleP9o4LGDK15lPCASEehWxpNTs+jxE/VUemMvedGautUBQyK5PRGaKJQb+xe9wl+9GgwueASRbGPl6yUnytUFy3V59yg+WbhbJJhA3dEKW4vnUu4jcgLL8FusCQQjDSvy0Ypqq3Dfx35L5YVfmLW+FrtYNvoD6zhA==',
-  }
+  },
 }
