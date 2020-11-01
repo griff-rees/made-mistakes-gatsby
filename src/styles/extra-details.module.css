@@ -1,0 +1,32 @@
+.detailWrap {
+  width: calc(100% - 2rem);
+  max-width: var(--text-width);
+  margin: 1rem auto 1rem auto;
+}
+
+.detailTitle {
+  margin-bottom: 1rem;
+  font-family: var(--monospace-font);
+  font-size: var(--text-sm);
+  cursor: pointer;
+}
+
+.detailContent {
+  font-size: var(--text-sm);
+
+  p {
+    margin: 0;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  > ul > li {
+    margin-left: 0;
+  }
+
+  li > ul {
+    margin-top: 0.5em;
+  }
+}
