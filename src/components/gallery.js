@@ -3,6 +3,7 @@ import Masonry from 'react-masonry-component'
 import Img from 'gatsby-image'
 import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
+import ImageZoom from './image-zoom'
 
 import site from '../../config/site'
 import style from '../styles/document.module.css'
@@ -49,7 +50,7 @@ class Gallery extends React.Component {
       document.documentElement.offsetHeight -
       (window.pageYOffset + window.innerHeight)
     if (this.state.showingMore && distanceToBottom < 100) {
-      this.setState(({ prevState }) => ({
+      this.setState(prevState => ({
         picturesToShow: prevState.picturesToShow + MAX_POSTS_PER_RENDER,
       }))
     }
@@ -67,7 +68,7 @@ class Gallery extends React.Component {
 
     return (
       <div className={style.gallery}>
-        <Masonry className={style.grid}>
+        <Masonry className={style.imageGrid}>
           {gallery.slice(0, this.state.picturesToShow).map(picture => {
             const image = picture.image
               ? picture.image
@@ -77,7 +78,7 @@ class Gallery extends React.Component {
             const backgroundColor = 'var(--input-background-color)'
 
             return (
-              <div key={picture.id || image.id} className={style.gridItem}>
+              <div key={picture.id} className={style.gridItem}>
                 {picture.frontmatter ? (
                   <Link to={picture.frontmatter.path}>
                     <Img
@@ -88,9 +89,8 @@ class Gallery extends React.Component {
                     />
                   </Link>
                 ) : (
-                  <Img
+                  <ImageZoom
                     fluid={image.childImageSharp.fluid}
-                    backgroundColor={backgroundColor}
                     title={picture.title}
                     alt={picture.exceprt}
                   />
@@ -123,7 +123,7 @@ class Gallery extends React.Component {
 
 Gallery.propTypes = {
   galleryPosts: PropTypes.object,
-  galleryFrontmatter: PropTypes.object,
+  galleryFrontmatter: PropTypes.array,
 }
 
 export const gallerys = graphql`

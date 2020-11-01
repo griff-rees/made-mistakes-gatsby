@@ -98,6 +98,7 @@ module.exports = {
     'babel-preset-gatsby',
     'gatsby-plugin-preact',
     'gatsby-plugin-react-helmet',
+    'react-medium-image-zoom',
     'gatsby-transformer-yaml',
     {
       resolve: `gatsby-source-github-api`,

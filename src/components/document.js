@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import Img from 'gatsby-image'
+import ImageZoom from './image-zoom'
 
 import style from '../styles/document.module.css'
 
@@ -85,10 +85,9 @@ const Document = ({
         </div>
       </div>
       {image && (
-        <Img
+        <ImageZoom
           fluid={image.childImageSharp.fluid}
           className={style.cover}
-          backgroundColor="var(--input-background-color)"
         />
       )}
       {toc && (
