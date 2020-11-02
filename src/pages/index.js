@@ -30,23 +30,30 @@ const HomePage = ({ data }) => {
         <div className={style.title}>
           <h1 className={style.heading}>
             <span>
-              The <a href="/art/" class="art">art</a>, {' '}
-              <a href="/sci/" class="sci">science</a> and{' '}
-              <a href="/thoughts/">thoughts</a> of{' '}
+              The{' '}
+              <a href="/art/" className="art">
+                art
+              </a>
+              ,{' '}
+              <a href="/sci/" className="sci">
+                science
+              </a>{' '}
+              and <a href="/thoughts/">thoughts</a> of{' '}
               <a href="/about/">Griffith&nbsp;Rees</a>
-              <a href="http://box3spool5.org" class="accent">.</a>
+              <a href="http://box3spool5.org" className="accent">
+                .
+              </a>
             </span>
           </h1>
           <div className={style.intro}>
             <p>
-              Meanders through theatre, film, code, verse, and strands
-              of research sprinkled with opinions all my own.
+              Meanders through theatre, film, code, verse, and strands of
+              research sprinkled with opinions all my own.
             </p>
           </div>
           <Img
             fluid={data.aboutImage.childImageSharp.fluid}
             className={style.cover}
-            backgroundColor="var(--input-background-color)"
           />
         </div>
         <div className={style.content}>

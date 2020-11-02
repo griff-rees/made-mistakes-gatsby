@@ -163,6 +163,8 @@
   excerpt:
   html:
 
+- id: theatre
+
 - id: TIL
   excerpt: Learnings captured for educational purposes and posterity.
   html: |
