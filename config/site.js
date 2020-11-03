@@ -36,7 +36,7 @@ module.exports = {
   twitter: '@griff_rees', // Twitter username
   twitterUrl: 'https://twitter.com/griff_rees',
   facebook: 'griffith.s.rees', // Facebook site name
-  githubUrl: 'https://github.com/griff_rees',
+  githubUrl: 'https://github.com/griff-rees',
   instagramUrl: 'https://www.instagram.com/mmistakes/',
   feedUrl: '/atom.xml',
   githubApiToken: process.env.GITHUB_API_TOKEN,
