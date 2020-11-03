@@ -58,32 +58,7 @@ const HomePage = ({ data }) => {
         </div>
         <div className={style.content}>
           <h2 className={style.subHeading}>
-            <span>Recent posts</span>
-          </h2>
-          <div className={style.list}>
-            {recentPosts.map(({ node }) => {
-              const {
-                id,
-                excerpt: autoExcerpt,
-                timeToRead,
-                frontmatter: { title, date, date_pretty, path, excerpt },
-              } = node
-
-              return (
-                <Entry
-                  key={id}
-                  title={title}
-                  date={date}
-                  datePretty={date_pretty}
-                  path={path}
-                  timeToRead={timeToRead}
-                  excerpt={excerpt || autoExcerpt}
-                />
-              )
-            })}
-          </div>
-          <h2 className={style.subHeading}>
-            <span>Featured articles</span>
+            <span>Featured projects</span>
           </h2>
           <div className={style.gridList}>
             {featuredPosts.map(({ node }) => {
@@ -118,24 +93,51 @@ const HomePage = ({ data }) => {
             })}
           </div>
           <h2 className={style.subHeading}>
+            <span>Recent posts</span>
+          </h2>
+          <div className={style.list}>
+            {recentPosts.map(({ node }) => {
+              const {
+                id,
+                excerpt: autoExcerpt,
+                timeToRead,
+                frontmatter: { title, date, date_pretty, path, excerpt },
+              } = node
+
+              return (
+                <Entry
+                  key={id}
+                  title={title}
+                  date={date}
+                  datePretty={date_pretty}
+                  path={path}
+                  timeToRead={timeToRead}
+                  excerpt={excerpt || autoExcerpt}
+                />
+              )
+            })}
+          </div>
+          <h2 className={style.subHeading}>
             <span>Explore more on this site</span>
           </h2>
           <div>
             <ul className={`${style.gridListExpanded} ${style.navList}`}>
-              <li key="articles">
+              <li key="art">
                 <Entry
-                  key="articles-home-link"
-                  title="Articles"
-                  path="/articles/"
-                  excerpt="<p>Long form writing mostly about design and web development.</p>"
+                  key="arts-home-link"
+                  title="Art"
+                  path="/art/"
+                  excerpt="Theatre, film, writing and design. Some
+                  collaboration with research."
                 />
               </li>
-              <li key="notes">
+              <li key="research">
                 <Entry
-                  key="notes-home-link"
-                  title="Notes"
-                  path="/notes/"
-                  excerpt="<p>Thoughts, inspiration, mistakes, and other minutia you&rsquo;d find in a blog.</p>"
+                  key="research-home-link"
+                  title="Research"
+                  path="/research/"
+                  excerpt="Data & Social—with meanders toward
+                  harder—sciences. Some brushes with art."
                 />
               </li>
               <li key="thoughts">
@@ -143,25 +145,24 @@ const HomePage = ({ data }) => {
                   key="thoughts-home-link"
                   title="Thoughts"
                   path="/thoughts/"
-                  excerpt="<p>An exceprt</p>"
+                  excerpt="Meanders, pondering and forays through and beyond
+                  art and science."
                 />
               </li>
-              <li key="works">
+              <li key="topics">
                 <Entry
-                  key="works-home-link"
-                  title="Works"
-                  path="/work/"
-                  excerpt="<p>Hand-picked selection of things I've designed, illustrated,
-                  and developed.</p>"
+                  key="topics-home-link"
+                  title="All topics"
+                  path="/tag/"
+                  excerpt="Archive of all posts organized by topic."
                 />
               </li>
-              <li key="mastering-paper">
+              <li key="about">
                 <Entry
-                  key="mastering-paper-home-link"
-                  title="Mastering Paper"
-                  path="/mastering-paper/"
-                  excerpt="<p>Tutorials to help master the iOS drawing app&mdash;
-                Paper</p>"
+                  key="about-home-link"
+                  title="About"
+                  path="/about/"
+                  excerpt="A bit of life and links to other stuff."
                 />
               </li>
               <li key="contact">
@@ -170,31 +171,7 @@ const HomePage = ({ data }) => {
                   title="Contact"
                   path="/contact/"
                   excerpt="<p>Preferred methods of sending questions, messages, and
-                  love letters to me.</p>"
-                />
-              </li>
-              <li key="support">
-                <Entry
-                  key="support-home-link"
-                  title="Show your support"
-                  path="/support/"
-                  excerpt="<p>Give thanks for the free open source goodies I provide.</p>"
-                />
-              </li>
-              <li key="faqs">
-                <Entry
-                  key="faqs-home-link"
-                  title="Frequently asked questions"
-                  path="/faqs/"
-                  excerpt="<p>There&rsquo;s no such thing as a dumb question&hellip;</p>"
-                />
-              </li>
-              <li key="topics">
-                <Entry
-                  key="topics-home-link"
-                  title="All topics"
-                  path="/tag/"
-                  excerpt="<p>Archive of all posts organized by topic.</p>"
+                  riddles to me.</p>"
                 />
               </li>
             </ul>
@@ -227,6 +204,7 @@ export const pageQuery = graphql`
           featured: { eq: true }
           published: { ne: false }
           output: { ne: false }
+          categories: { in: ["art", "sci"] }
         }
       }
       sort: { fields: [frontmatter___date], order: DESC }
