@@ -231,12 +231,13 @@ p > .gatsby-resp-image-wrapper {
 
 [data-theme='dark'] {
   .gatsby-image-wrapper,
-  .gatsby-resp-image-wrapper {
+  .gatsby-resp-image-wrapper,
+  [data-rmiz-wrap='visible'] {
     opacity: 0.8;
     transition: opacity 0.25s ease;
 
     &:hover {
-      opacity: 1;
+      opacity: 1!important;
     }
   }
 }
