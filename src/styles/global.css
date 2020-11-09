@@ -237,7 +237,7 @@ p > .gatsby-resp-image-wrapper {
     transition: opacity 0.25s ease;
 
     &:hover {
-      opacity: 1!important;
+      opacity: 1;
     }
   }
 }
