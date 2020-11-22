@@ -91,6 +91,8 @@ export const pageQuery = graphql`
               width
             }
           }
+          extension
+          publicURL
         }
       }
       id

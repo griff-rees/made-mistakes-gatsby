@@ -1,10 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Entry from '../components/entry'
-import Repository from '../components/repository'
 
 import style from '../styles/archive.module.css'
 
@@ -22,20 +21,24 @@ const ArtPage = ({ data }) => {
       <SEO
         title={`Art - ${site.title}`}
         path="/art/"
-        description="Theatre, film, poetry and design. Some collaboration with science."
+        description="Theatre, film, poetry and design. Some
+                     collaboration with research."
         metaImage={site.image}
       />
       <main id="main" className={style.main}>
         <div className={style.title}>
           <h1 className={style.heading}>
-            <span class="art">§Art</span>
+            <span className="art">§Art</span>
           </h1>
         </div>
         <div className={style.content}>
           <div className={style.intro}>
             <p>
-              Theatre, film, poetry and design. Some collaboration
-              with <a href="/sci/" class="sci">science</a>.
+              Theatre, film, poetry and design. Some collaboration with{' '}
+              <Link to="/sci/" className="sci">
+                research
+              </Link>
+              .
             </p>
           </div>
           <h2 className={style.subHeading}>
@@ -46,7 +49,16 @@ const ArtPage = ({ data }) => {
               const {
                 id,
                 excerpt: autoExcerpt,
-                frontmatter: { title, path, author, image, excerpt },
+                frontmatter: {
+                  title,
+                  path,
+                  author,
+                  image,
+                  thumbnail,
+                  alt,
+                  image_title,
+                  excerpt,
+                },
               } = node
 
               return (
@@ -55,7 +67,9 @@ const ArtPage = ({ data }) => {
                   title={title}
                   path={path}
                   author={author || siteAuthor}
-                  image={image}
+                  image={thumbnail || image}
+                  alt={alt}
+                  imageTitle={image_title}
                   excerpt={excerpt || autoExcerpt}
                 />
               )
@@ -102,7 +116,20 @@ export const pageQuery = graphql`
             excerpt
             featured
             categories
+            alt
+            image_title
             image {
+              extension
+              publicURL
+              childImageSharp {
+                fluid(maxWidth: 400, quality: 75) {
+                  ...GatsbyImageSharpFluid_noBase64
+                }
+              }
+            }
+            thumbnail {
+              extension
+              publicURL
               childImageSharp {
                 fluid(maxWidth: 400, quality: 75) {
                   ...GatsbyImageSharpFluid_noBase64

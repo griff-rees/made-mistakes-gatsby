@@ -86,13 +86,17 @@ class Gallery extends React.Component {
                       backgroundColor={backgroundColor}
                       title={picture.frontmatter.title}
                       alt={picture.frontmatter.excerpt}
+                      extension={image.extension}
+                      publicURL={image.publicURL}
                     />
                   </Link>
                 ) : (
                   <ImageZoom
-                    fluid={image.childImageSharp.fluid}
+                    imageSharp={image.childImageSharp}
                     title={picture.title}
-                    alt={picture.exceprt}
+                    alt={picture.alt}
+                    extension={image.extension}
+                    publicURL={image.publicURL}
                   />
                 )}
               </div>
@@ -130,8 +134,11 @@ export const gallerys = graphql`
   fragment galleryByFrontmatterFragment on Frontmatter {
     gallery {
       title
+      alt
       image {
         id
+        extension
+        publicURL
         childImageSharp {
           fluid(maxHeight: 400, quality: 75) {
             ...GatsbyImageSharpFluid_noBase64
@@ -149,6 +156,8 @@ export const gallerys = graphql`
       path
       image {
         id
+        extension
+        publicURL
         childImageSharp {
           fluid(maxHeight: 400, quality: 75) {
             ...GatsbyImageSharpFluid_noBase64
@@ -157,6 +166,8 @@ export const gallerys = graphql`
       }
       thumbnail {
         id
+        extension
+        publicURL
         childImageSharp {
           fluid(maxWidth: 400, quality: 75) {
             ...GatsbyImageSharpFluid_noBase64

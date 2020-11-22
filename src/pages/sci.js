@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import Octicon, { MarkGithub } from '@githubprimer/octicons-react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -22,23 +22,27 @@ const SciencePage = ({ data }) => {
   return (
     <Layout>
       <SEO
-        title={`Science - ${site.title}`}
+        title={`Research - ${site.title}`}
         path="/sci/"
-        description="Data & Social—with meanders toward harder—sciences. Some
-                     brushes with art."
+        description="Testing hypotheses in social and data
+                     sciences. Occasional brushes with art."
         metaImage={site.image}
       />
       <main id="main" className={style.main}>
         <div className={style.title}>
           <h1 className={style.heading}>
-            <span class="sci">&#8734;Science</span>
+            <span className="sci">&#8734;Research</span>
           </h1>
         </div>
         <div className={style.content}>
           <div className={style.intro}>
             <p>
-              Data &#38; Social&mdash;with meanders toward
-              harder&mdash;sciences. Some brushes with <a href="/art/" class="art">art</a>.
+              Testing hypotheses in social and data sciences. Occasional brushes
+              with{' '}
+              <Link to="/art/" className="art">
+                art
+              </Link>
+              .
             </p>
           </div>
           <h2 className={style.subHeading}>
@@ -49,7 +53,16 @@ const SciencePage = ({ data }) => {
               const {
                 id,
                 excerpt: autoExcerpt,
-                frontmatter: { title, path, author, image, excerpt },
+                frontmatter: {
+                  title,
+                  path,
+                  author,
+                  image,
+                  thumbnail,
+                  alt,
+                  image_title,
+                  excerpt,
+                },
               } = node
 
               return (
@@ -58,7 +71,9 @@ const SciencePage = ({ data }) => {
                   title={title}
                   path={path}
                   author={author || siteAuthor}
-                  image={image}
+                  image={thumbnail || image}
+                  alt={alt}
+                  imageTitle={image_title}
                   excerpt={excerpt || autoExcerpt}
                 />
               )
@@ -77,8 +92,9 @@ const SciencePage = ({ data }) => {
           {github && (
             <div>
               {github.viewer.repositories.nodes
-                .map((repo) => <Repository key={repo.name} repo={repo} />)
-                .reverse()} {/* repro.name can be duplicates if a fork */}
+                .map(repo => <Repository key={repo.name} repo={repo} />)
+                .reverse()}{' '}
+              {/* repro.name can be duplicates if a fork */}
               <a href={site.githubUrl} className="btn">
                 See more on GitHub
               </a>
@@ -125,7 +141,20 @@ export const pageQuery = graphql`
             excerpt
             featured
             categories
+            alt
+            image_title
             image {
+              extension
+              publicURL
+              childImageSharp {
+                fluid(maxWidth: 400, quality: 75) {
+                  ...GatsbyImageSharpFluid_noBase64
+                }
+              }
+            }
+            thumbnail {
+              extension
+              publicURL
               childImageSharp {
                 fluid(maxWidth: 400, quality: 75) {
                   ...GatsbyImageSharpFluid_noBase64

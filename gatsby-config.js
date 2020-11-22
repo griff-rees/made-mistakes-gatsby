@@ -42,24 +42,12 @@ module.exports = {
     defaultTheme: 'light',
     postsPerPage: 10,
     mainMenu: [
-      // {
-      //   title: 'Articles',
-      //   path: '/articles/',
-      // },
-      // {
-      //   title: 'Notes',
-      //   path: '/notes/',
-      // },
-      // {
-      //   title: 'Works',
-      //   path: '/work/',
-      // },
       {
         title: 'Art',
         path: '/art/',
       },
       {
-        title: 'Science',
+        title: 'Research',
         path: '/sci/',
       },
       {
@@ -364,7 +352,10 @@ module.exports = {
                         excerpt
                         path
                         date
+                        alt
                         image {
+                          extension
+                          publicURL
                           childImageSharp {
                             fixed(width: 1100) {
                               src
@@ -381,18 +372,22 @@ module.exports = {
               return allMarkdownRemark.edges.map((edge) => {
                 const {
                   node: {
-                    frontmatter: { title, date, path, excerpt, image },
+                    frontmatter: { title, date, path, excerpt, image, alt },
                     excerpt: autoExcerpt,
                     html,
                   },
                 } = edge
 
                 const permalink = site.siteMetadata.siteUrl + path
-                const imageElement = image
+                const imageURL = !image
+                  ? ''
+                  : image.extension === 'svg'
+                  ? image.publicURL
+                  : image.childImageSharp.fixed.src
+                const imageElement = imageURL
                   ? `<p><img src="${
-                      site.siteMetadata.siteUrl +
-                      image.childImageSharp.fixed.src
-                    }" alt=""></p>`
+                      site.siteMetadata.siteUrl + imageURL
+                    }" alt="${alt}"></p>`
                   : ``
                 let mainContent = html
                 // Hacky workaround for relative paths https://github.com/gaearon/overreacted.io/issues/65

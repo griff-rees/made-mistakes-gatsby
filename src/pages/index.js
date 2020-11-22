@@ -36,7 +36,7 @@ const HomePage = ({ data }) => {
               </a>
               ,{' '}
               <a href="/sci/" className="sci">
-                science
+                research
               </a>{' '}
               and <a href="/thoughts/">thoughts</a> of{' '}
               <a href="/about/">Griffith&nbsp;Rees</a>
@@ -74,9 +74,11 @@ const HomePage = ({ data }) => {
                   author,
                   excerpt,
                   image,
+                  thumbnail,
+                  alt,
+                  image_title,
                 },
               } = node
-
               return (
                 <Entry
                   key={id}
@@ -86,7 +88,9 @@ const HomePage = ({ data }) => {
                   path={path}
                   author={author || siteAuthor}
                   timeToRead={timeToRead}
-                  image={image}
+                  image={thumbnail || image}
+                  alt={alt}
+                  imageTitle={image_title}
                   excerpt={excerpt || autoExcerpt}
                 />
               )
@@ -136,8 +140,8 @@ const HomePage = ({ data }) => {
                   key="research-home-link"
                   title="Research"
                   path="/research/"
-                  excerpt="Data & Social—with meanders toward
-                  harder—sciences. Some brushes with art."
+                  excerpt="Testing hypotheses in social and data
+                           sciences. Occasional brushes with art."
                 />
               </li>
               <li key="thoughts">
@@ -223,7 +227,20 @@ export const pageQuery = graphql`
             excerpt
             featured
             categories
+            alt
+            image_title
             image {
+              extension
+              publicURL
+              childImageSharp {
+                fluid(maxWidth: 400, quality: 75) {
+                  ...GatsbyImageSharpFluid_noBase64
+                }
+              }
+            }
+            thumbnail {
+              extension
+              publicURL
               childImageSharp {
                 fluid(maxWidth: 400, quality: 75) {
                   ...GatsbyImageSharpFluid_noBase64

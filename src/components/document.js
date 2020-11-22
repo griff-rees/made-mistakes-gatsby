@@ -17,6 +17,8 @@ const Document = ({
   dateFromNow,
   dateModifiedFromNow,
   image,
+  imageTitle,
+  alt,
   author,
   timeToRead,
   toc,
@@ -86,8 +88,12 @@ const Document = ({
       </div>
       {image && (
         <ImageZoom
-          fluid={image.childImageSharp.fluid}
+          imageSharp={image.childImageSharp}
           className={style.cover}
+          extension={image.extension}
+          publicURL={image.publicURL}
+          alt={alt}
+          title={imageTitle || title}
         />
       )}
       {toc && (
@@ -116,6 +122,8 @@ Document.propTypes = {
   dateModified: PropTypes.string,
   dateModifiedFromNow: PropTypes.string,
   image: PropTypes.object,
+  imageTitle: PropTypes.string,
+  alt: PropTypes.string,
   author: PropTypes.object,
   timeToRead: PropTypes.number,
   toc: PropTypes.bool,

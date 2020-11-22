@@ -41,7 +41,7 @@ const Tags = ({
         title={`${tag}${paginationTitle} - ${site.title}`}
         path={`/tag/${_.slugify(tag)}/`}
         description={
-          taxonomyExcerpt || `An archive of posts related to ${tag}.`
+          taxonomyExcerpt || `An archive of pages related to ${tag}.`
         }
         metaImage={metaImage}
       />
@@ -73,6 +73,9 @@ const Tags = ({
                   path,
                   author,
                   image,
+                  thumbnail,
+                  image_title,
+                  alt,
                   excerpt,
                 },
               } = node
@@ -86,7 +89,9 @@ const Tags = ({
                   path={path}
                   author={author || siteAuthor}
                   timeToRead={timeToRead}
-                  image={image}
+                  image={thumbnail || image}
+                  imageTitle={image_title}
+                  alt={alt}
                   excerpt={excerpt || autoExcerpt}
                 />
               )
@@ -151,7 +156,20 @@ export const postsQuery = graphql`
             path
             author
             excerpt
+            alt
+            image_title
             image {
+              extension
+              publicURL
+              childImageSharp {
+                fluid(maxWidth: 760, quality: 75) {
+                  ...GatsbyImageSharpFluid_noBase64
+                }
+              }
+            }
+            thumbnail {
+              extension
+              publicURL
               childImageSharp {
                 fluid(maxWidth: 760, quality: 75) {
                   ...GatsbyImageSharpFluid_noBase64

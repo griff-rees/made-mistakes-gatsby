@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import Img from 'gatsby-image'
+import RasterOrSVG from './raster-svg'
 
 import style from '../styles/entry.module.css'
 
@@ -13,6 +13,8 @@ const Entry = ({
   datePretty,
   path,
   image,
+  alt,
+  imageTitle,
   author,
   timeToRead,
   excerpt,
@@ -59,15 +61,17 @@ const Entry = ({
             </div>
           ) : null}
         </div>
-
         {image && (
-          <Img
-            fluid={image.childImageSharp.fluid}
+          <RasterOrSVG
+            imageSharp={image.childImageSharp}
             className={style.cover}
             backgroundColor="var(--input-background-color)"
+            extension={image.extension}
+            publicURL={image.publicURL}
+            alt={alt}
+            title={imageTitle || title}
           />
         )}
-
         <div
           className={`${style.excerpt} p-summary`}
           dangerouslySetInnerHTML={{ __html: excerpt }}
@@ -83,6 +87,8 @@ Entry.propTypes = {
   datePretty: PropTypes.string,
   path: PropTypes.string,
   image: PropTypes.object,
+  imageTitle: PropTypes.string,
+  alt: PropTypes.string,
   author: PropTypes.object,
   timeToRead: PropTypes.number,
   excerpt: PropTypes.string,

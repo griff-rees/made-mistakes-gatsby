@@ -27,6 +27,8 @@ const PostTemplate = ({ data, pageContext }) => {
       last_modified_at_from_now,
       path,
       image,
+      image_title,
+      alt,
       excerpt,
       tags,
       toc,
@@ -44,7 +46,11 @@ const PostTemplate = ({ data, pageContext }) => {
   } = data.markdownRemark
   const { galleryPosts, comments } = data
   const { next, previous } = pageContext
-  const metaImage = image ? image.childImageSharp.fixed : site.image
+  const metaImage = !image
+    ? site.image
+    : image.childImageSharp
+    ? image.childImageSharp.fixed
+    : image.publicURL
   const twitterCardType = image ? 'summary_large_image' : 'summary'
   const previousPath = previous && previous.frontmatter.path
   const previousLabel = previous && previous.frontmatter.title
@@ -82,6 +88,8 @@ const PostTemplate = ({ data, pageContext }) => {
           toc={toc}
           tableOfContents={tableOfContents}
           image={image}
+          imageTitle={image_title}
+          alt={alt}
           html={html}
           tags={tags}
           extraDetails={extra_details}
@@ -152,6 +160,8 @@ export const pageQuery = graphql`
         tags
         ...detailsFragment
         image {
+          extension
+          publicURL
           childImageSharp {
             fluid(maxWidth: 1100, quality: 75) {
               ...GatsbyImageSharpFluid_noBase64
@@ -163,6 +173,8 @@ export const pageQuery = graphql`
             }
           }
         }
+        image_title
+        alt
         toc
         comments
         comments_locked

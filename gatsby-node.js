@@ -192,6 +192,8 @@ exports.createSchemaCustomization = ({ actions }) => {
       hide_meta: Boolean
       _parent: String!
       gallery_categories: [String]
+      image_title: String
+      alt: String
     }
 
     type TaxonomyYaml implements Node {
