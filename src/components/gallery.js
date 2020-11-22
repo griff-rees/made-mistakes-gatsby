@@ -1,8 +1,8 @@
 import React from 'react'
 import Masonry from 'react-masonry-component'
-import Img from 'gatsby-image'
 import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
+import RasterOrSVG from './raster-svg'
 import ImageZoom from './image-zoom'
 
 import site from '../../config/site'
@@ -81,8 +81,8 @@ class Gallery extends React.Component {
               <div key={picture.id} className={style.gridItem}>
                 {picture.frontmatter ? (
                   <Link to={picture.frontmatter.path}>
-                    <Img
-                      fluid={image.childImageSharp.fluid}
+                    <RasterOrSVG
+                      imageSharp={image.childImageSharp}
                       backgroundColor={backgroundColor}
                       title={picture.frontmatter.title}
                       alt={picture.frontmatter.excerpt}
