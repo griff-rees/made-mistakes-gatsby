@@ -29,7 +29,7 @@ const TagsPage = ({
     <SEO
       title={`All tags | ${site.titleAlt}`}
       path="/tag/"
-      description="An archive of posts organized by topic."
+      description="An archive organized by topic."
       metaImage={metaImage}
     />
     <main id="main" className={style.main}>
