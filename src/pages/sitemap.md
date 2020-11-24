@@ -17,12 +17,8 @@ A hierarchical breakdown of all the sections and pages found on the site. For yo
 - [Terms and policies](/terms/)
 - [Tag index](/tag/)
 
-## [Articles](/articles/)
+## [Art](/art/)
 
-## [Notes](/notes/)
+## [Research](/sci/)
 
 ## [Thoughts](/thoughts/)
-
-## [Mastering Paper for iOS](/mastering-paper/)
-
-## [Portfolio work](/work/)

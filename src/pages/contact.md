@@ -6,7 +6,7 @@ last_modified_at: 2020-09-24T22:20:25
 excerpt: "Preferred methods of sending your questions, inquires, messages, and love letters to me."
 ---
 
-Want to get in touch? Try [on Twitter](https://twitter.com/griff_rees) or use the form below:
+Want to get in touch? Try [Twitter](https://twitter.com/griff_rees) or use the form below:
 
 <form class="form-group" name="contact" method="POST" data-netlify="true"
 netlify-honeypot="bot-field" action="/contact/thanks">
