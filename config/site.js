@@ -37,7 +37,7 @@ module.exports = {
   twitterUrl: 'https://twitter.com/griff_rees',
   facebook: 'griffith.s.rees', // Facebook site name
   githubUrl: 'https://github.com/griff-rees',
-  instagramUrl: 'https://www.instagram.com/mmistakes/',
+  instagramUrl: 'https://www.instagram.com/griffith.rees',
   feedUrl: '/atom.xml',
   githubApiToken: process.env.GITHUB_API_TOKEN,
   githubApiQuery: `query ($number_of_repos: Int!) {
@@ -46,7 +46,10 @@ module.exports = {
       avatarUrl
       isHireable
       resourcePath
-      repositories(last: $number_of_repos, privacy: PUBLIC, orderBy: { field: STARGAZERS, direction:ASC } ) {
+      repositories(last: $number_of_repos,
+                   privacy: PUBLIC,
+                   orderBy: { field: STARGAZERS, direction:ASC }
+                   ) {
         nodes {
           name
           description
