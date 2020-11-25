@@ -196,6 +196,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       image_title: String
       alt: String
       order: Int
+      output: Boolean
     }
 
     type TaxonomyYaml implements Node {
