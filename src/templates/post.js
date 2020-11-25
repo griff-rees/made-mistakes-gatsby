@@ -27,6 +27,7 @@ const PostTemplate = ({ data, pageContext }) => {
       last_modified_at_from_now,
       path,
       image,
+      fallback_raster,
       image_title,
       alt,
       excerpt,
@@ -50,7 +51,7 @@ const PostTemplate = ({ data, pageContext }) => {
     ? site.image
     : image.childImageSharp
     ? image.childImageSharp.fixed
-    : image.publicURL
+    : image // To cover non-raster images like svgs
   const twitterCardType = image ? 'summary_large_image' : 'summary'
   const previousPath = previous && previous.frontmatter.path
   const previousLabel = previous && previous.frontmatter.title
@@ -88,6 +89,7 @@ const PostTemplate = ({ data, pageContext }) => {
           toc={toc}
           tableOfContents={tableOfContents}
           image={image}
+          fallbackRaster={fallback_raster}
           imageTitle={image_title}
           alt={alt}
           html={html}
@@ -173,8 +175,15 @@ export const pageQuery = graphql`
             }
           }
         }
-        image_title
+        fallback_raster {
+          childImageSharp {
+            fixed(width: 1100, quality: 75) {
+              src
+            }
+          }
+        }
         alt
+        image_title
         toc
         comments
         comments_locked

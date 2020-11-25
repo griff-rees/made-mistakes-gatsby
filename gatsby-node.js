@@ -183,6 +183,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       tags: [String!]
       excerpt: String
       image: File @fileByRelativePath
+      fallback_raster: File @fileByRelativePath
       thumbnail: File @fileByRelativePath
       published: Boolean
       toc: Boolean

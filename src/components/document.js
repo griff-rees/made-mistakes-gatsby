@@ -18,6 +18,7 @@ const Document = ({
   dateModifiedFromNow,
   image,
   imageTitle,
+  fallbackRaster,
   alt,
   author,
   timeToRead,
@@ -94,6 +95,7 @@ const Document = ({
           publicURL={image.publicURL}
           alt={alt}
           title={imageTitle || title}
+          fallbackRaster={fallbackRaster}
         />
       )}
       {toc && (
@@ -122,6 +124,7 @@ Document.propTypes = {
   dateModified: PropTypes.string,
   dateModifiedFromNow: PropTypes.string,
   image: PropTypes.object,
+  fallbackRaster: PropTypes.object,
   imageTitle: PropTypes.string,
   alt: PropTypes.string,
   author: PropTypes.object,
