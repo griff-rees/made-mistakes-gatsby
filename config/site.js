@@ -23,7 +23,7 @@ module.exports = {
     'https://mm-staticman.herokuapp.com/v2/entry/mmistakes/made-mistakes-gatsby/master/comments',
 
   // JSONLD / Manifest
-  favicon: '/images/grIcon.png', // Used for manifest favicon generation
+  favicon: '/images/Icon.png', // Used for manifest favicon generation
   shortName: 'Griff Rees', // shortname for manifest. MUST be shorter than 12 characters
   author: {
     // Author for schema.org JSONLD
