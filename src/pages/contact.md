@@ -9,7 +9,7 @@ excerpt: "Preferred methods of sending your questions, inquires, messages, and l
 Want to get in touch? Try [Twitter](https://twitter.com/griff_rees) or use the form below:
 
 <form class="form-group" name="contact" method="POST" data-netlify="true"
-netlify-honeypot="bot-field" action="/contact/thanks">
+netlify-honeypot="bot-field" data-netlify-recaptcha="true" action="/contact/thanks">
   <div hidden aria-hidden="true">
     <label>
       Don’t fill this out if you're a person: 
@@ -37,5 +37,6 @@ netlify-honeypot="bot-field" action="/contact/thanks">
       <input name="referral" type="text" maxlength="255" placeholder="e.g. Searching the web" />
     </label>
   </div>
+  <div data-netlify-recaptcha="true"></div>
   <button id="saveForm" name="saveForm" class="btn submit" type="submit">Send message</button>
 </form>
