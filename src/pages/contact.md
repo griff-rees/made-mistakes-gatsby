@@ -28,17 +28,16 @@ Want to get in touch? Try [Twitter](https://twitter.com/griff_rees) or use the f
   </div>
   <div>
     <label for="email">Email address
-      <input type="email" name="email" placeholder="Email to respond to" id="email" required maxlenght="255" spellcheck="false" title="An email address to reply to, maximum 255 characters." />
+      <input type="email" name="email" placeholder="Email address I respond to" id="email" required maxlenght="255" spellcheck="false" title="An email address to reply to, maximum 255 characters." />
     </label>
   </div>
   <div>
-    <label for="message">Message
-      <textarea name="message" spellcheck="true" rows="10" required placeholder="Your message, currently only plain text allowed!" />
-      </textarea>
+    <label for="message">Message (plain text)
+    <textarea name="message" spellcheck="true" rows="10" required placeholder="Your message" /></textarea>
     </label>
   </div>
   <div>
-    <label for="referral">How&rsquo;d you hear about my website?
+    <label for="referral">How&rsquo;d you get to my website?
       <input name="referral" type="text" maxlength="255" placeholder="e.g. Searching the web" />
     </label>
   </div>
