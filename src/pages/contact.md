@@ -23,24 +23,56 @@ Want to get in touch? Try [Twitter](https://twitter.com/griff_rees) or use the f
   </div>
   <div>
     <label for="name">Name
-      <input name="name" type="text" spellcheck="false" maxlength="255" required placeholder="Your name" />
+      <input
+       required
+       name="name"
+       type="text"
+       spellcheck="false"
+       maxlength="255"
+       placeholder="Your name"
+       />
     </label>
   </div>
   <div>
     <label for="email">Email address
-      <input type="email" name="email" placeholder="Email address I respond to" id="email" required maxlenght="255" spellcheck="false" title="An email address to reply to, maximum 255 characters." />
+      <input
+       required
+       type="email"
+       name="email"
+       placeholder="Your email address"
+       id="email"
+       maxlenght="255"
+       spellcheck="false"
+       title="An email address to reply to, maximum 255 characters."
+       />
     </label>
   </div>
   <div>
     <label for="message">Message (plain text)
-    <textarea name="message" spellcheck="true" rows="10" required placeholder="Your message" /></textarea>
+      <textarea
+       required
+       name="message"
+       spellcheck="true"
+       rows="10"
+       placeholder="Your message"
+       /></textarea>
     </label>
   </div>
   <div>
-    <label for="referral">How&rsquo;d you get to my website?
-      <input name="referral" type="text" maxlength="255" placeholder="e.g. Searching the web" />
+    <label for="referral">How&rsquo;d you find this site?
+      <input
+       name="referral"
+       type="text"
+       maxlength="255"
+       placeholder="e.g. Searching the web"
+       />
     </label>
   </div>
   <div data-netlify-recaptcha="true"></div>
-  <button id="saveForm" name="saveForm" class="btn submit" type="submit">Send message</button>
+  <button
+   id="saveForm"
+   name="saveForm"
+   class="btn submit"
+   type="submit"
+   >Send message</button>
 </form>
