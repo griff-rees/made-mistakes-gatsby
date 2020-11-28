@@ -11,7 +11,7 @@ Want to get in touch? Try [Twitter](https://twitter.com/griff_rees) or use the f
 <form class="form-group"
       name="contact"
       method="POST"
-      data-netlify="true"
+      netlify
       netlify-honeypot="bot-field"
       data-netlify-recaptcha="true"
       action="/contact/thanks">
