@@ -26,6 +26,7 @@ Want to get in touch? Try [Twitter](https://twitter.com/griff_rees) or use the f
        spellcheck="false"
        maxlength="255"
        placeholder="Your name"
+       title="How you'd like to be addressed; maximum 255 characters."
        />
     </label>
   </div>
@@ -39,7 +40,7 @@ Want to get in touch? Try [Twitter](https://twitter.com/griff_rees) or use the f
        id="email"
        maxlenght="255"
        spellcheck="false"
-       title="An email address to reply to, maximum 255 characters."
+       title="Which email address to reply to; maximum 255 characters."
        />
     </label>
   </div>
@@ -60,7 +61,8 @@ Want to get in touch? Try [Twitter](https://twitter.com/griff_rees) or use the f
        name="referral"
        type="text"
        maxlength="255"
-       placeholder="e.g. Searching the web"
+       placeholder="E.g. searching the web"
+       title="How did you find this site? Search? Link? Details appreciated and maximum 255 characters."
        />
     </label>
   </div>
