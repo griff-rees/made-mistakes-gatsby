@@ -8,8 +8,7 @@ excerpt: "Preferred methods of sending your questions, inquires, messages, and l
 
 Want to get in touch? Try [Twitter](https://twitter.com/griff_rees) or use the form below:
 
-<form class="form-group"
-      name="contact"
+<form name="contact"
       method="POST"
       netlify
       netlify-honeypot="bot-field"
@@ -17,7 +16,7 @@ Want to get in touch? Try [Twitter](https://twitter.com/griff_rees) or use the f
       action="/contact/thanks">
   <input type="hidden" name="bot-field" aria-hidden="true" />
   <input type="hidden" name="form-name" value="contact" />
-  <div>
+  <div class="form-group">
     <label for="name">Name
       <input
        required
@@ -30,7 +29,7 @@ Want to get in touch? Try [Twitter](https://twitter.com/griff_rees) or use the f
        />
     </label>
   </div>
-  <div>
+  <div class="form-group">
     <label for="email">Email address
       <input
        required
@@ -44,7 +43,7 @@ Want to get in touch? Try [Twitter](https://twitter.com/griff_rees) or use the f
        />
     </label>
   </div>
-  <div>
+  <div class="form-group">
     <label for="message">Message (plain text)
       <textarea
        required
@@ -55,7 +54,7 @@ Want to get in touch? Try [Twitter](https://twitter.com/griff_rees) or use the f
        /></textarea>
     </label>
   </div>
-  <div>
+  <div class="form-group">
     <label for="referral">How&rsquo;d you find this site?
       <input
        name="referral"
@@ -66,9 +65,11 @@ Want to get in touch? Try [Twitter](https://twitter.com/griff_rees) or use the f
        />
     </label>
   </div>
-  <div data-netlify-recaptcha="true"></div>
-  <button
-    class="btn submit"
-    type="submit"
-    >Send message</button>
+  <div data-netlify-recaptcha="true" class="form-group"></div>
+  <div class="form-group">
+    <button
+      class="btn submit"
+      type="submit"
+      >Send message</button>
+  </div>
 </form>
