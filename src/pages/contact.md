@@ -8,21 +8,37 @@ excerpt: "Preferred methods of sending your questions, inquires, messages, and l
 
 Want to get in touch? Try [Twitter](https://twitter.com/griff_rees) or use the form below:
 
-<form class="form-group" name="contact" method="POST" data-netlify="true"
-netlify-honeypot="bot-field">
+<!--
+<form
+ class="form-group"
+ name="contact"
+ method="POST"
+ netlify
+ netlify-honeypot="bot-field">
   <input type="hidden" name="bot-field" aria-hidden="true" />
   <input type="hidden" name="form-name" value="contact" />
   <div>
     <label for="name">Name
-      <input name="name" type="text" spellcheck="false"
-      maxlength="255" required
+      <input
+      name="name"
+      type="text"
+      spellcheck="false"
+      maxlength="255"
+      required
       title="Your name, however you'd like it written." />
+      placeholder="Your name"
     </label>
   </div>
   <div>
     <label for="email">Email address
-      <input type="email" name="email" placeholder="Email"
-      id="email" required maxlenght="255" spellcheck="false"
+      <input
+      required
+      type="email"
+      name="email"
+      placeholder="Email"
+      id="email"
+      maxlenght="255"
+      spellcheck="false"
       title="An email address to reply to, maximum 255 characters." />
     </label>
   </div>
@@ -38,25 +54,19 @@ netlify-honeypot="bot-field">
       placeholder="e.g. Searching the web" />
     </label>
   </div>
-  <button id="saveForm" name="saveForm" class="btn submit" type="submit">Send message</button>
+  <button class="btn submit" type="submit">Send message</button>
 </form>
 
+-->
 
-<!-- 
 <form class="form-group"
       name="contact"
       method="POST"
       netlify
       netlify-honeypot="bot-field"
-      action="/contact/thanks"> -->
-<!-- <form name="contact" method="POST" data-netlify="true"
-netlify-honeypot="bot-field">
-  <div hidden aria-hidden="true">
-    <label>
-      Don’t fill this out if you're a person: 
-      <input name="bot-field" />
-    </label>
-  </div>
+      action="/contact/thanks">
+  <input type="hidden" name="bot-field" aria-hidden="true" />
+  <input type="hidden" name="form-name" value="contact" />
   <div>
     <label for="name">Name
       <input
@@ -68,8 +78,8 @@ netlify-honeypot="bot-field">
        placeholder="Your name"
        />
     </label>
-  </div> -->
-<!--  <div>
+  </div>
+  <div>
     <label for="email">Email address
       <input
        required
@@ -103,9 +113,8 @@ netlify-honeypot="bot-field">
        placeholder="e.g. Searching the web"
        />
     </label>
-  </div> -->
-<!--  <button
-   class="btn submit"
-   type="submit"
-   >Send message</button>
-</form>-->
+  <button
+    class="btn submit"
+    type="submit"
+    >Send message</button>
+</form>
