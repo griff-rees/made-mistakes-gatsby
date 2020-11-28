@@ -15,11 +15,7 @@ Want to get in touch? Try [Twitter](https://twitter.com/griff_rees) or use the f
       netlify
       netlify-honeypot="bot-field"
       action="/contact/thanks"> -->
-<form class="form-group"
-      name="contact"
-      method="POST"
-      netlify
-      action="/contact/thanks"> -->
+<form name="contact" method="POST" data-netlify="true">
 <!--  <div hidden aria-hidden="true">
     <label>
       Don’t fill this out if you're a person: 
