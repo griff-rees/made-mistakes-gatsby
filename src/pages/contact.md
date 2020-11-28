@@ -20,12 +20,12 @@ Want to get in touch? Try [Twitter](https://twitter.com/griff_rees) or use the f
       method="POST"
       netlify
       action="/contact/thanks"> -->
-  <div hidden aria-hidden="true">
+<!--  <div hidden aria-hidden="true">
     <label>
       Don’t fill this out if you're a person: 
       <input name="bot-field" />
     </label>
-  </div>
+  </div> -->
   <div>
     <label for="name">Name
       <input
@@ -74,8 +74,6 @@ Want to get in touch? Try [Twitter](https://twitter.com/griff_rees) or use the f
     </label>
   </div> -->
   <button
-   id="saveForm"
-   name="saveForm"
    class="btn submit"
    type="submit"
    >Send message</button>
