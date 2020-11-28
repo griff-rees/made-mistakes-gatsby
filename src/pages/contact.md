@@ -11,7 +11,7 @@ Want to get in touch? Try [Twitter](https://twitter.com/griff_rees) or use the f
 <form class="form-group"
       name="contact"
       method="POST"
-      netlify
+      data-netlify="true"
       netlify-honeypot="bot-field"
       action="/contact/thanks">
   <div hidden aria-hidden="true">
@@ -32,7 +32,7 @@ Want to get in touch? Try [Twitter](https://twitter.com/griff_rees) or use the f
        />
     </label>
   </div>
-  <div>
+<!--  <div>
     <label for="email">Email address
       <input
        required
@@ -66,7 +66,7 @@ Want to get in touch? Try [Twitter](https://twitter.com/griff_rees) or use the f
        placeholder="e.g. Searching the web"
        />
     </label>
-  </div>
+  </div> -->
   <button
    id="saveForm"
    name="saveForm"
