@@ -8,62 +8,12 @@ excerpt: "Preferred methods of sending your questions, inquires, messages, and l
 
 Want to get in touch? Try [Twitter](https://twitter.com/griff_rees) or use the form below:
 
-<!--
-<form
- class="form-group"
- name="contact"
- method="POST"
- netlify
- netlify-honeypot="bot-field">
-  <input type="hidden" name="bot-field" aria-hidden="true" />
-  <input type="hidden" name="form-name" value="contact" />
-  <div>
-    <label for="name">Name
-      <input
-      name="name"
-      type="text"
-      spellcheck="false"
-      maxlength="255"
-      required
-      title="Your name, however you'd like it written." />
-      placeholder="Your name"
-    </label>
-  </div>
-  <div>
-    <label for="email">Email address
-      <input
-      required
-      type="email"
-      name="email"
-      placeholder="Email"
-      id="email"
-      maxlenght="255"
-      spellcheck="false"
-      title="An email address to reply to, maximum 255 characters." />
-    </label>
-  </div>
-  <div>
-    <label for="message">Message
-      <textarea name="message" spellcheck="true" rows="10"
-      required title="Your message, currently only plain text allowed!" /></textarea>
-    </label>
-  </div>
-  <div>
-    <label for="referral">How&rsquo;d you hear about my website?
-      <input name="referral" type="text" maxlength="255"
-      placeholder="e.g. Searching the web" />
-    </label>
-  </div>
-  <button class="btn submit" type="submit">Send message</button>
-</form>
-
--->
-
 <form class="form-group"
       name="contact"
       method="POST"
       netlify
       netlify-honeypot="bot-field"
+      data-netlify-recaptcha="true"
       action="/contact/thanks">
   <input type="hidden" name="bot-field" aria-hidden="true" />
   <input type="hidden" name="form-name" value="contact" />
@@ -113,6 +63,8 @@ Want to get in touch? Try [Twitter](https://twitter.com/griff_rees) or use the f
        placeholder="e.g. Searching the web"
        />
     </label>
+  </div>
+  <div data-netlify-recaptcha="true"></div>
   <button
     class="btn submit"
     type="submit"
