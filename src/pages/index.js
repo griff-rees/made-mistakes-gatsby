@@ -5,6 +5,7 @@ import Img from 'gatsby-image'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Entry from '../components/entry'
+import BackgroundSection from '../components/background'
 
 import style from '../styles/archive.module.css'
 
@@ -27,35 +28,33 @@ const HomePage = ({ data }) => {
         metaImage={site.image}
       />
       <main id="main" className={style.main}>
-        <div className={style.title}>
-          <h1 className={style.heading}>
-            <span>
-              The{' '}
-              <a href="/art/" className="art">
-                art
-              </a>
-              ,{' '}
-              <a href="/sci/" className="sci">
-                research
-              </a>{' '}
-              and <a href="/thoughts/">thoughts</a> of{' '}
-              <a href="/about/">Griffith&nbsp;Rees</a>
-              <a href="http://box3spool5.org" className="accent">
-                .
-              </a>
-            </span>
-          </h1>
-          <div className={style.intro}>
-            <p>
-              Meanders through theatre, film, code, verse, and strands of
-              research sprinkled with opinions all my own.
-            </p>
+        <BackgroundSection>
+          <div className={style.title}>
+            <h1 className={style.heading}>
+              <span>
+                The{' '}
+                <a href="/art/" className="art">
+                  art
+                </a>
+                ,{' '}
+                <a href="/sci/" className="sci">
+                  research
+                </a>{' '}
+                and <a href="/thoughts/">thoughts</a> of{' '}
+                <a href="/about/">Griffith&nbsp;Rees</a>
+                <a href="http://box3spool5.org" className="accent">
+                  .
+                </a>
+              </span>
+            </h1>
+            <div className={style.intro}>
+              <p>
+                Meanders through theatre, film, code, verse, and strands of
+                research sprinkled with opinions all my own.
+              </p>
+            </div>
           </div>
-          <Img
-            fluid={data.aboutImage.childImageSharp.fluid}
-            className={style.cover}
-          />
-        </div>
+        </BackgroundSection>
         <div className={style.content}>
           <h2 className={style.subHeading}>
             <span>Featured projects</span>

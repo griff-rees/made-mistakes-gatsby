@@ -86,6 +86,7 @@ module.exports = {
     'babel-preset-gatsby',
     'gatsby-plugin-preact',
     'gatsby-plugin-react-helmet',
+    'gatsby-background-image-es5',
     'react-medium-image-zoom',
     'gatsby-transformer-yaml',
     {
