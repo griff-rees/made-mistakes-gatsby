@@ -8,7 +8,7 @@ module.exports = {
   siteLanguage: 'en', // Language Tag on <html> element
   image: {
     // Used for SEO, relative to /static/ folder
-    src: '/images/grIcon.png',
+    src: '/images/Icon.png',
     width: 384,
     height: 384,
   },
