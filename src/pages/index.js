@@ -18,6 +18,7 @@ const HomePage = ({ data }) => {
     },
     featuredPosts: { edges: featuredPosts },
     recentPosts: { edges: recentPosts },
+    backgroundImage,
   } = data
   return (
     <Layout>
@@ -28,7 +29,7 @@ const HomePage = ({ data }) => {
         metaImage={site.image}
       />
       <main id="main" className={style.main}>
-        <BackgroundSection>
+        <BackgroundSection backgroundImage={backgroundImage}>
           <div className={style.title}>
             <h1 className={style.heading}>
               <span>
@@ -278,6 +279,9 @@ export const pageQuery = graphql`
           }
         }
       }
+    }
+    backgroundImage: file(relativePath: { eq: "mountain-path.jpg" }) {
+      ...BackgroundImageFragment
     }
     aboutImage: file(relativePath: { eq: "dream_play.jpg" }) {
       childImageSharp {

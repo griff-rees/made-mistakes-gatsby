@@ -1,31 +1,30 @@
 import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
 import BackgroundImage from 'gatsby-background-image-es5'
 
-const BackgroundSection = ({ children }) => {
-  const data = useStaticQuery(
-    graphql`
-      query {
-        desktop: file(relativePath: { eq: "mountain-path.jpg" }) {
-          childImageSharp {
-            fluid(quality: 90, maxWidth: 1920) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-      }
-    `
-  )
+const BackgroundSection = ({ backgroundImage, children }) => {
+  const image = backgroundImage.childImageSharp.fluid
 
-  const imageData = data.desktop.childImageSharp.fluid
-
-  return <BackgroundImage fluid={imageData}>{children}</BackgroundImage>
+  return <BackgroundImage fluid={image}>{children}</BackgroundImage>
 }
 
 BackgroundSection.propTypes = {
   children: PropTypes.node.isRequired,
+  backgroundImage: PropTypes.object,
 }
+
+export const BackgroundImageFragment = graphql`
+  fragment BackgroundImageFragment on File {
+    extension
+    publicURL
+    childImageSharp {
+      fluid(quality: 90, maxWidth: 1920) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    }
+  }
+`
 
 export default BackgroundSection
