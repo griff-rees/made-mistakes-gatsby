@@ -130,7 +130,7 @@ Gallery.propTypes = {
   galleryFrontmatter: PropTypes.array,
 }
 
-export const gallerys = graphql`
+export const galleries = graphql`
   fragment galleryByFrontmatterFragment on Frontmatter {
     gallery {
       title
