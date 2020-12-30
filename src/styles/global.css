@@ -468,7 +468,6 @@ p > .gatsby-resp-image-wrapper {
   font-family: var(--sci-font)!important;
   font-weight: bold;
   color: var(--sci-color)!important;
-  font-size: var(--base-font-size);
 }
 
 .accent {

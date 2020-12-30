@@ -3,8 +3,12 @@ import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 import SEO from '../components/seo'
 import Layout from '../components/layout'
-import Entry from '../components/entry'
+// import Entry from '../components/entry'
 import Pagination from '../components/pagination'
+import BannerSection from '../components/banner'
+import PostsSection from '../components/posts-section'
+// import Github
+// import instagram
 
 import site from '../../config/site'
 
@@ -29,9 +33,14 @@ const Categories = ({
     taxonomyYaml: {
       name: taxonomyName,
       excerpt: taxonomyExcerpt,
-      html: taxonomyHtml,
+      char: taxonomyImageChar,
+      image: taxonomyImage,
+      links: taxonomyLinks,
+      show_featured: taxonomyFeatured,
     },
     allMarkdownRemark: { group, edges: posts },
+    featuredPosts,
+    paginatedPosts,
   } = data
   const paginationTitle =
     humanPageNumber === 1
@@ -41,7 +50,7 @@ const Categories = ({
 
   // Sort object alphabetically function
   const propComparator = (propName) => (a, b) =>
-    a[propName].toLowerCase() == b[propName].toLowerCase()
+    a[propName].toLowerCase() === b[propName].toLowerCase()
       ? 0
       : a[propName].toLowerCase() < b[propName].toLowerCase()
       ? -1
@@ -58,22 +67,26 @@ const Categories = ({
         metaImage={metaImage}
       />
       <main id="main" className={style.main}>
-        <div className={style.title}>
-          <h1 className={style.heading}>
-            <span>
-              {taxonomyName} {paginationTitle}
-            </span>
-          </h1>
-          {taxonomyHtml && humanPageNumber === 1 && (
-            <div
-              className={style.intro}
-              dangerouslySetInnerHTML={{ __html: taxonomyHtml }}
+        <BannerSection
+          name={taxonomyName}
+          char={taxonomyImageChar}
+          backgroundImage={taxonomyImage}
+          excerpt={taxonomyExcerpt}
+          paginationTitle={paginationTitle}
+          humanPageNumber={humanPageNumber}
+          links={taxonomyLinks}
+        />
+        <div className={style.content}>
+          {taxonomyFeatured && (
+            <PostsSection
+              posts={featuredPosts}
+              sectionTitle="Featured"
+              category={taxonomyName}
+              defaultAuthor={siteAuthor}
             />
           )}
-        </div>
-        <div className={style.content}>
           <h2 className={style.subHeading}>
-            <span>Browse by topic</span>
+            <span>Browse</span>
           </h2>
           <div className={style.columnList} style={{ marginBottom: '3rem' }}>
             <ul>
@@ -87,38 +100,11 @@ const Categories = ({
               ))}
             </ul>
           </div>
-          <div className={style.list}>
-            {posts.map(({ node }) => {
-              const {
-                id,
-                excerpt: autoExcerpt,
-                timeToRead,
-                frontmatter: {
-                  title,
-                  date,
-                  date_pretty,
-                  path,
-                  author,
-                  image,
-                  excerpt,
-                },
-              } = node
-
-              return (
-                <Entry
-                  key={id}
-                  title={title}
-                  date={date}
-                  datePretty={date_pretty}
-                  path={path}
-                  author={author || siteAuthor}
-                  timeToRead={timeToRead}
-                  image={image}
-                  excerpt={excerpt || autoExcerpt}
-                />
-              )
-            })}
-          </div>
+          <PostsSection
+            posts={paginatedPosts}
+            sectionTitle="Recent"
+            defaultAuthor={siteAuthor}
+          />
         </div>
       </main>
       <Pagination
@@ -140,6 +126,8 @@ Categories.propTypes = {
     humanPageNumber: PropTypes.number,
     numberOfPages: PropTypes.number,
   }),
+  paginatedPosts: PropTypes.object,
+  featuredPosts: PropTypes.object,
 }
 
 export const postsQuery = graphql`
@@ -153,11 +141,11 @@ export const postsQuery = graphql`
       }
     }
     taxonomyYaml(id: { eq: $category }) {
-      id
-      name
-      excerpt
-      html
+      ...BannerFragment
+      show_featured
     }
+    ...FeaturedPostsFragment
+    ...PaginatedPostsFragment
     allMarkdownRemark(
       filter: {
         frontmatter: {

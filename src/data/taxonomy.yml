@@ -1,15 +1,21 @@
 - id: art
   name: Art
-  excerpt: Theatre, film, writing and design. Some collaboration with <a href="/sci/">sci</sci>.
-  html: |
-    <p>Theatre, film, writing and design. Some collaboration with <a href="/sci/">sci</sci>.</p>
+  excerpt: Theatre, film, writing and design. Some collaboration with research.
+  custom_style: true
+  char: "*"
+  image: ../images/evening-pool.jpg
+  show_featured: true
+  links:
+    - text: research
+      href: /sci/
+      category: sci
 
-- id: articles
-  name: Articles
-  excerpt: A collection of thoughts, inspiration, mistakes, and other long-form minutia I've written.
+# - id: articles
+#   name: Articles
+#   excerpt: A collection of thoughts, inspiration, mistakes, and other long-form minutia I've written.
 
 - id: code
-  excerpt:
+  excerpt: Writing, testing and learning to code.
   html:
 
 - id: data science
@@ -56,11 +62,11 @@
 
 - id: network
 
-- id: notes
-  name: Notes
-  excerpt: Small, bite sized content I've written.
-  html: |
-    <p>Small, bite sized content I've written. For longer, more thorough writing &mdash; peruse the <a href="/articles/">articles section</a>.</p>
+# - id: notes
+#   name: Notes
+#   excerpt: Small, bite sized content I've written.
+#   html: |
+#     <p>Small, bite sized content I've written. For longer, more thorough writing &mdash; peruse the <a href="/articles/">articles section</a>.</p>
 
 - id: open source
   excerpt:
@@ -98,9 +104,22 @@
 
 - id: thoughts
   name: Thoughts
-  excerpt: Meanders, pondering and forays through and beyond art and science.
-  html: |
-    <p>Meanders, pondering and forays through and beyond art and science.</p>
+  excerpt: Pondering and opining through and beyond art and science.
+  char: §
+  image: ../images/mountain-path.jpg
+  show_featured: false
+  # html: |
+  #   <p>Pondering and opining through and beyond
+  #   <a href="/art" class="art" style="color: var(--art-color-overlay)!important">art</a>
+  #   and <a href="/sci" class="sci" style="color: var(--sci-color-overlay)!important">science</a>
+  #   .</p>
+  links:
+    - text: art
+      href: /art/
+      category: art
+    - text: science
+      href: /sci/
+      category: sci
 
 - id: visualization
 

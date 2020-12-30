@@ -6,16 +6,17 @@ import style from '../styles/menu.module.css'
 
 const MainMenu = ({ mainMenu }) => {
   const menu = mainMenu.slice(0)
-
   const items = menu.map((menuItem, index) => (
     <li key={index} className={style.primaryMenuItem}>
       <Link
         to={menuItem.path}
         itemProp="url"
-        activeStyle={{ textDecoration: 'line-through' }}
+        activeStyle={{
+          textDecoration: 'line-through',
+          textDecorationColor: 'var(--text-color)',
+        }}
         partiallyActive
-        className={(menuItem.path == '/art/' || menuItem.path == '/sci/') ?
-                   menuItem.path.slice(1, 4) : null}
+        className={menuItem.category ? menuItem.path.slice(1, -1) : null}
       >
         {menuItem.title}
       </Link>
@@ -59,9 +60,14 @@ Menu.propTypes = {
     PropTypes.shape({
       title: PropTypes.string,
       path: PropTypes.string,
+      category: PropTypes.boolean,
     })
   ),
   onChangeTheme: PropTypes.func,
+}
+
+MainMenu.propTypes = {
+  mainMenu: Menu.mainMenu,
 }
 
 export default Menu

@@ -74,7 +74,7 @@ exports.createPages = ({ actions, graphql, getNodes }) => {
       ({ internal, fileAbsolutePath, frontmatter }) =>
         internal.type === 'MarkdownRemark' &&
         fileAbsolutePath.indexOf('/posts/') !== -1 &&
-        frontmatter.published !== false
+        frontmatter.published !== false,
     )
     const posts = result.data.posts.edges
     const pages = result.data.pages.edges
@@ -102,7 +102,8 @@ exports.createPages = ({ actions, graphql, getNodes }) => {
     })
 
     // Create paginated category pages
-    const categories = ['articles', 'mastering-paper', 'notes', 'thoughts']
+
+    const categories = ['art', 'thoughts']
     // const categories = filter(
     //   category => not(isNil(category)),
     //   uniq(flatMap(post => post.frontmatter.categories, postsNodes))
@@ -204,6 +205,10 @@ exports.createSchemaCustomization = ({ actions }) => {
       name: String
       excerpt: String
       html: String
+      custom_style: Boolean
+      char: String
+      image: File @fileByRelativePath
+      show_featured: Boolean
     }
   `
   createTypes(typeDefs)

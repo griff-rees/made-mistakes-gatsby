@@ -16,12 +16,16 @@ const RasterOrSVG = (props) => {
     publicURL,
     alt,
     title,
+    className,
     style,
     fallbackRaster,
   } = props
   if (extension === 'svg' && publicURL) {
     return (
-      <div className="gatsby-image-wrapper" style={svgWrapperStyle}>
+      <div
+        className={`${className} gatsby-image-wrapper`}
+        style={svgWrapperStyle}
+      >
         <picture>
           <source type="image/svg+xml" srcSet={publicURL} />
           <img
@@ -45,6 +49,7 @@ RasterOrSVG.propTypes = {
   alt: PropTypes.string,
   title: PropTypes.string,
   style: PropTypes.object,
+  className: PropTypes.string,
 }
 
 export default RasterOrSVG

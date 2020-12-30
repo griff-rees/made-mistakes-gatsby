@@ -21,6 +21,14 @@ excerpt: "Griffith Rees is an artist and researcher, stumbling through code to s
 -->
 I'm probably scripping ideas on paper and keyboards. Decided it might be nice to share.
 
+
+<!--
+<Img
+  fluid={data.aboutImage.childImageSharp.fluid}
+  className={style.cover}
+/>
+-->
+
 <!--
 <div class="two-column">
   <figure>

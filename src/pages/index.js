@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -50,8 +50,22 @@ const HomePage = ({ data }) => {
             </h1>
             <div className={style.intro}>
               <p>
-                Meanders through theatre, film, code, verse, and strands of
-                research sprinkled with opinions all my own.
+                <Link to="/tag/theatre" className={style.art}>
+                  Theatre
+                </Link>
+                ,{' '}
+                <Link to="/sci/" className={style.sci}>
+                  research
+                </Link>
+                ,{' '}
+                <Link to="/tag/film" className={style.art}>
+                  film
+                </Link>{' '}
+                and <Link to="/tag/code">code</Link> sprinkled with{' '}
+                <Link to="/thoughts/" className={style.thoughts}>
+                  opinions all my own
+                </Link>
+                .
               </p>
             </div>
           </div>
@@ -280,7 +294,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    backgroundImage: file(relativePath: { eq: "mountain-path.jpg" }) {
+    backgroundImage: file(relativePath: { eq: "fletcher-moss-park.jpg" }) {
       ...BackgroundImageFragment
     }
     aboutImage: file(relativePath: { eq: "dream_play.jpg" }) {

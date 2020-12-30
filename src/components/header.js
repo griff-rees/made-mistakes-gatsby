@@ -72,6 +72,7 @@ Header.propTypes = {
     PropTypes.shape({
       title: PropTypes.string,
       path: PropTypes.string,
+      category: PropTypes.boolean,
     })
   ),
 }

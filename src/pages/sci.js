@@ -4,6 +4,7 @@ import { Link, graphql } from 'gatsby'
 import Octicon, { MarkGithub } from '@githubprimer/octicons-react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import BackgroundSection from '../components/background'
 import Entry from '../components/entry'
 import Repository from '../components/repository'
 
@@ -16,6 +17,7 @@ const SciencePage = ({ data }) => {
     site: {
       siteMetadata: { author: siteAuthor },
     },
+    backgroundImage,
     allMarkdownRemark: { edges: posts },
     githubData: { data: github },
   } = data
@@ -24,29 +26,34 @@ const SciencePage = ({ data }) => {
       <SEO
         title={`Research - ${site.title}`}
         path="/sci/"
-        description="Testing hypotheses in social and data
-                     sciences. Occasional brushes with art."
+        description="Testing research hypotheses.
+                     Occasional brushes with art."
         metaImage={site.image}
       />
       <main id="main" className={style.main}>
-        <div className={style.title}>
-          <h1 className={style.heading}>
-            <span className="sci">&#8734;Research</span>
-          </h1>
-        </div>
-        <div className={style.content}>
-          <div className={style.intro}>
-            <p>
-              Testing hypotheses in social and data sciences. Occasional brushes
-              with{' '}
-              <Link to="/art/" className="art">
-                art
-              </Link>
-              .
-            </p>
+        <BackgroundSection backgroundImage={backgroundImage}>
+          <div className={style.title}>
+            <h1 className={style.heading}>
+              <span className="sci">
+                <span className={style.char}>&#8734;</span>Research
+              </span>
+            </h1>
+            <div className={style.intro}>
+              <p>
+                Testing research hypotheses. Occasional brushes with{' '}
+                <Link to="/art/" className={style.art}>
+                  art
+                </Link>
+                .
+              </p>
+            </div>
           </div>
+        </BackgroundSection>
+        <div className={style.content}>
           <h2 className={style.subHeading}>
-            <span>Featured research</span>
+            <span>
+              Featured<span className={style.sci}>Research</span>
+            </span>
           </h2>
           <div className={style.gridList}>
             {posts.map(({ node }) => {
@@ -112,6 +119,11 @@ SciencePage.propTypes = {
 
 export const pageQuery = graphql`
   query SciQuery {
+    backgroundImage: file(
+      relativePath: { eq: "newcastle-northern-ireland.jpg" }
+    ) {
+      ...BackgroundImageFragment
+    }
     site {
       siteMetadata {
         author {

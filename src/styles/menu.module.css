@@ -18,11 +18,11 @@
   list-style: none;
   counter-reset: menu;
 
-    display: flex;
+  display: flex;
 
-    li + li {
-      margin-left: 1rem;
-    }
+  li + li {
+    margin-left: 1rem;
+  }
 }
 
 .primaryMenuItem {
@@ -42,6 +42,16 @@
   a:visited {
     color: var(--text-color);
     font-family: var(--serif-font);
+  }
+
+  a.art {
+    color: var(--art-color);
+    font-family: var(--art-font);
+  }
+
+  a.sci {
+    color: var(--sci-color);
+    font-family: var(--sci-font);
   }
 
   a:focus,

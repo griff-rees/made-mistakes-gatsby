@@ -15,6 +15,7 @@ const Entry = ({
   image,
   alt,
   imageTitle,
+  fallbackRaster,
   author,
   timeToRead,
   excerpt,
@@ -70,6 +71,7 @@ const Entry = ({
             publicURL={image.publicURL}
             alt={alt}
             title={imageTitle || title}
+            fallbackRaster={fallbackRaster}
           />
         )}
         <div
@@ -87,6 +89,7 @@ Entry.propTypes = {
   datePretty: PropTypes.string,
   path: PropTypes.string,
   image: PropTypes.object,
+  fallbackRaster: PropTypes.object,
   imageTitle: PropTypes.string,
   alt: PropTypes.string,
   author: PropTypes.object,

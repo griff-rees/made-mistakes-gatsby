@@ -23,6 +23,7 @@ const Layout = ({ children }) => {
           mainMenu {
             title
             path
+            category
           }
           footerMenu {
             title

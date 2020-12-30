@@ -40,19 +40,22 @@ module.exports = {
     // Site config
     copyrights: `&copy; 2019&mdash;${new Date().getFullYear()} <a href="https://griffithrees.com/humans.txt">Griffith Rees</a>. Some Rights Reserved.<br />Forked from <a href="https://github.com/mmistakes/made-mistakes-gatsby" rel="nofollow">Making Mistakes</a>`,
     defaultTheme: 'light',
-    postsPerPage: 10,
+    postsPerPage: site.postsPerPage,
     mainMenu: [
       {
         title: 'Art',
         path: '/art/',
+        category: true,
       },
       {
         title: 'Research',
         path: '/sci/',
+        category: true,
       },
       {
         title: 'Thoughts',
         path: '/thoughts/',
+        category: true,
       },
       {
         title: 'About',

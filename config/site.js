@@ -33,6 +33,9 @@ module.exports = {
   themeColor: '#ffffff',
   backgroundColor: '#111111',
 
+  categoryPages: ['art', 'sci', 'throughts'],
+  postsPerPage: 3,
+
   twitter: '@griff_rees', // Twitter username
   twitterUrl: 'https://twitter.com/griff_rees',
   facebook: 'griffith.s.rees', // Facebook site name
