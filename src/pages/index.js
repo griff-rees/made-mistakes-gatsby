@@ -32,7 +32,7 @@ const HomePage = ({ data }) => {
         <BackgroundSection backgroundImage={backgroundImage}>
           <div className={style.title}>
             <h1 className={style.heading}>
-              <span>
+              <span className={style.home}>
                 The{' '}
                 <a href="/art/" className="art">
                   art

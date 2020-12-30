@@ -1,6 +1,19 @@
 @import './icon.module.css';
 
+.sci {
+  font-family: var(--sci-font);
+  color: var(--sci-color);
+  font-weight: bold;
+}
+
+.art {
+  font-family: var(--art-font);
+  color: var(--art-color);
+}
+
 .title {
+  padding: 4rem 0 1rem;
+
   @media (--medium-down) {
     width: calc(100% - 2rem);
     max-width: var(--container-width);
@@ -10,6 +23,14 @@
     .cover {
       display: none;
     }
+  }
+
+  .art {
+    color: var(--art-color-inverted);
+  }
+
+  .sci {
+    color: var(--sci-color-inverted);
   }
 
   @media (--large-up) {
@@ -33,7 +54,7 @@
   position: relative;
   margin-top: 2rem;
   margin-bottom: 1rem;
-  margin-left: -1.5rem;
+  margin-left: -2.5rem;
   max-width: var(--text-width);
   align-self: flex-start;
   width: 100%;
@@ -46,11 +67,13 @@
   line-height: 1.25;
   z-index: 99;
   transform: rotate(-1deg);
+  padding-right: 10%;
 
   @media (--medium-up) {
     grid-column-start: 2;
-    padding-right: 5%;
+    /* padding-right: 5%; */
     font-size: var(--text-4xl);
+    padding-left: .5rem;
   }
 
   @media (--large-up) {
@@ -62,11 +85,29 @@
   }
 
   span {
-    padding: 0 0.5rem 0 1.5rem;
+    padding: 0 0.5rem 0 0.5rem;
     line-height: 1.5;
     box-decoration-break: clone;
     background-color: var(--text-color);
     mask-image: url('../images/dust-and-scratches.png');
+  }
+
+  .char {
+    padding: 0;
+    color: var(--accent-color)!;
+    margin-right: .25rem;
+  }
+
+  .art {
+    padding: 0 .5rem 0 .5rem;
+  }
+
+  .thoughts {
+    padding: 0 .4rem 0 .4rem;
+  }
+
+  .home {
+    padding: 0 .5rem 0 2.5rem;
   }
 }
 
@@ -87,7 +128,7 @@
 
   @media (--medium-up) {
     grid-column-start: 2;
-    padding-right: 5%;
+    /* padding-right: 5%; */
     font-size: var(--text-xl);
   }
 
@@ -101,24 +142,57 @@
 
   span {
     display: inline-block;
-    padding: 0.25rem 0.5rem;
+    padding: 0.3rem 0.5rem;
     box-decoration-break: clone;
     background-color: var(--text-color);
     mask-image: url('../images/dust-and-scratches.png');
+
+    .art {
+      color: var(--art-color-inverted);
+    }
+
+    .sci {
+      color: var(--sci-color-inverted);
+    }
   }
 }
 
 .intro {
   max-width: var(--text-width);
   font-size: var(--text-base);
+  color: var(--overlay-text-color);
+  padding-right: 35%;
+
+  p {
+    background-color: var(--header-intro-background);
+    padding: 0.3rem 0.5rem;
+  }
+
+  a {
+    color: var(--overlay-text-color);
+  }
+
+  .art {
+    color: var(--art-color-overlay);
+  }
+
+  .sci {
+    color: var(--sci-color-overlay);
+  }
+
+  .thoughts {
+    font-family: var(--serif-font);
+    font-size: 1.1em;
+  }
 
   @media (--small-up) {
+    padding-right: 5%;
     font-size: var(--text-lg);
   }
 
   @media (--medium-up) {
     grid-column-start: 2;
-    padding-right: 5%;
+    padding-right: 35%;
     font-size: var(--text-xl);
   }
 }
