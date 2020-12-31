@@ -1,6 +1,6 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
 import PropTypes from 'prop-types'
+import { graphql, Link } from 'gatsby'
 import BackgroundSection from './background'
 
 import style from '../styles/archive.module.css'
@@ -16,7 +16,7 @@ const TextWithLinks = ({ excerpt, links }) => {
   }
   return (
     <p>
-      {splicedExcerpt.map((element) =>
+      {splicedExcerpt.map(element =>
         typeof element === 'string' ? (
           element
         ) : (
