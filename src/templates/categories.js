@@ -4,9 +4,9 @@ import { graphql, Link } from 'gatsby'
 import SEO from '../components/seo'
 import Layout from '../components/layout'
 // import Entry from '../components/entry'
-import Pagination from '../components/pagination'
-import BannerSection from '../components/banner'
 import PostsSection from '../components/posts-section'
+import BannerSection from '../components/banner'
+import Pagination from '../components/pagination'
 // import Github
 // import instagram
 
