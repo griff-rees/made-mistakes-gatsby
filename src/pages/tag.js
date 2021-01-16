@@ -1,8 +1,8 @@
-import { graphql, Link } from 'gatsby'
-import PropTypes from 'prop-types'
 import React from 'react'
-import Layout from '../components/layout'
+import PropTypes from 'prop-types'
+import { graphql, Link } from 'gatsby'
 import SEO from '../components/seo'
+import Layout from '../components/layout'
 
 import site from '../../config/site'
 
@@ -13,8 +13,8 @@ const _ = require('lodash-addons')
 const metaImage = site.image
 
 // Sort object alphabetically function
-const propComparator = (propName) => (a, b) =>
-  a[propName].toLowerCase() == b[propName].toLowerCase()
+const propComparator = propName => (a, b) =>
+  a[propName].toLowerCase() === b[propName].toLowerCase()
     ? 0
     : a[propName].toLowerCase() < b[propName].toLowerCase()
     ? -1
