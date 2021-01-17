@@ -35,7 +35,10 @@ const SciencePage = ({ data }) => {
           <div className={style.title}>
             <h1 className={style.heading}>
               <span className="sci">
-                <span className={style.char}>&#8734;</span>Research
+                <span className={`${style.char} ${style.sci} accent`}>
+                  &#8734;
+                </span>
+                Research
               </span>
             </h1>
             <div className={style.intro}>

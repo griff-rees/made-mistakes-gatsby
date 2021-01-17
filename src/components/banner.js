@@ -56,7 +56,9 @@ const BannerSection = ({
         <h1 className={style.heading}>
           <span className={categoryStyle}>
             {char && (
-              <span className={`${style.char} ${categoryStyle}`}>{char}</span>
+              <span className={`${style.char} ${categoryStyle} accent`}>
+                {char}
+              </span>
             )}
             {name} {paginationTitle}
           </span>
