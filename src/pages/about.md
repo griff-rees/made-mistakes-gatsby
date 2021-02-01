@@ -2,52 +2,15 @@
 title: "About Griffith Rees"
 path: /about/
 date: 2020-08-17
-last_modified_at: 2020-09-24T23:41:44
+last_modified_at: 2021-02-01T23:38:59
 excerpt: "Griffith Rees is an artist and researcher, stumbling through code to straddle creativity and research."
-# image: ../images/dream_play.jpg
 ---
-
-<!--
-<figure class="two-column">
-  <a href="/paperfaces/mmistakes-2-portrait/">
-    <img src="../images/griff_dream_play.jpg" alt="Griffith Rees directing adaptation of Strindber's A Dream Play">
-  </a>
-  <a href="/paperfaces/rosebuds-2-portrait/">
-    <img src="../images/paperfaces-rosebuds-2-900.jpg" alt="Everly and Chloe iPad Paper drawing">
-  </a>
-  <figcaption>Self portrait and my 2 little rosebuds drawn with Paper for iOS.</figcaption>
-</figure>
-
--->
 I'm probably scripping ideas on paper and keyboards. Decided it might be nice to share.
 
 
-<!--
-<Img
-  fluid={data.aboutImage.childImageSharp.fluid}
-  className={style.cover}
-/>
--->
-
-<!--
-<div class="two-column">
-  <figure>
-    <img src="../images/dream_play.jpg" alt="Griffith Rees directing adaptation of Strindber's A Dream Play">
-    <figcaption>An adaptation of Strindberg's A Dream Play.</figcaption>
-  </figure>
-  <p>
-  I'm probably scripping ideas on paper and keyboards. Decided it might nice to share.
-  </p>
-</div>
--->
-
 ## About the site
 
-My first full dive into JavaScript[^reactjs] after years of Python
-and R. Surreal but fascinating. Once again heavily indebted to [**Made
-Mistakes**](https://mademistakes.com/), with further nods to
-[Gatsbyjs](https://www.gatsbyjs.org/) and
-[Markdown](https://www.gatsbyjs.com/guides/markdown/)[^rmarkdown].
+My first full dive into JavaScript[^reactjs] after years of Python and R. Surreal but fascinating. I'm heavily indebted to [**Made Mistakes**](https://mademistakes.com/), with further nods to [Gatsbyjs](https://www.gatsbyjs.org/) and [Markdown](https://www.gatsbyjs.com/guides/markdown/)[^rmarkdown].
 
 ## Me on the internet
 
