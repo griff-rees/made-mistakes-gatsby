@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import ImageZoom from './image-zoom'
+import FigureCaption from './figcaption.js'
 
 import style from '../styles/document.module.css'
 
@@ -21,6 +22,9 @@ const Document = ({
   fallbackRaster,
   alt,
   author,
+  titleImageCredit,
+  titleImageCreditURL,
+  titleImageType,
   timeToRead,
   toc,
   tableOfContents,
@@ -88,15 +92,22 @@ const Document = ({
         </div>
       </div>
       {image && (
-        <ImageZoom
-          imageSharp={image.childImageSharp}
-          className={style.cover}
-          extension={image.extension}
-          publicURL={image.publicURL}
-          alt={alt}
-          title={imageTitle || title}
-          fallbackRaster={fallbackRaster}
-        />
+        <figure>
+          <ImageZoom
+            imageSharp={image.childImageSharp}
+            extension={image.extension}
+            publicURL={image.publicURL}
+            alt={alt}
+            title={imageTitle || title}
+            fallbackRaster={fallbackRaster}
+          />
+          <FigureCaption
+            caption={imageTitle}
+            creditType={titleImageType}
+            creditName={titleImageCredit}
+            creditURL={titleImageCreditURL}
+          />
+        </figure>
       )}
       {toc && (
         <details className={style.tocWrap}>
@@ -128,6 +139,9 @@ Document.propTypes = {
   imageTitle: PropTypes.string,
   alt: PropTypes.string,
   author: PropTypes.object,
+  titleImageCredit: PropTypes.string,
+  titleImageCreditURL: PropTypes.string,
+  titleImageType: PropTypes.string,
   timeToRead: PropTypes.number,
   toc: PropTypes.bool,
   tableOfContents: PropTypes.string,

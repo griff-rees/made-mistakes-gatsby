@@ -63,11 +63,18 @@ class Gallery extends React.Component {
       ? this.props.galleryFrontmatter.map(e => e)
       : []
     const gallery = posts.concat(frontmatterImages)
+
     const postsSize = this.props.galleryPosts.edges.length
     const gallerySize = postsSize + frontmatterImages.length
 
+    const {
+      galleryDefaultCreditType,
+      galleryDefaultCreditName,
+      galleryDefaultCreditURL,
+    } = this.props
+
     return (
-      <div className={style.gallery}>
+      <>
         <Masonry className={style.imageGrid}>
           {gallery.slice(0, this.state.picturesToShow).map(picture => {
             const image = picture.image
@@ -76,6 +83,22 @@ class Gallery extends React.Component {
               ? picture.frontmatter.thumbnail
               : picture.frontmatter.image
             const backgroundColor = 'var(--input-background-color)'
+
+            const creditType = picture.image_type
+              ? picture.image_type
+              : galleryDefaultCreditType
+
+            const creditName = picture.image_credit_name
+              ? picture.image_credit_name
+              : picture.image_credit_name === false
+              ? null
+              : galleryDefaultCreditName
+
+            const creditURL = picture.image_credit_url
+              ? picture.image_credit_url
+              : picture.image_credit_url === false
+              ? null
+              : galleryDefaultCreditURL
 
             return (
               <div key={picture.id} className={style.gridItem}>
@@ -97,6 +120,10 @@ class Gallery extends React.Component {
                     alt={picture.alt}
                     extension={image.extension}
                     publicURL={image.publicURL}
+                    creditName={creditName}
+                    creditURL={creditURL}
+                    creditType={creditType}
+                    zoomElement="figure"
                   />
                 )}
               </div>
@@ -120,7 +147,7 @@ class Gallery extends React.Component {
               Load more
             </button>
           ))}
-      </div>
+      </>
     )
   }
 }
@@ -128,6 +155,15 @@ class Gallery extends React.Component {
 Gallery.propTypes = {
   galleryPosts: PropTypes.object,
   galleryFrontmatter: PropTypes.array,
+  galleryDefaultCreditType: PropTypes.string,
+  galleryDefaultCreditName: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.bool,
+  ]),
+  galleryDefaultCreditURL: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.bool,
+  ]),
 }
 
 export const galleries = graphql`
@@ -135,6 +171,9 @@ export const galleries = graphql`
     gallery {
       title
       alt
+      image_type
+      image_credit_name
+      image_credit_url
       image {
         id
         extension
@@ -154,6 +193,9 @@ export const galleries = graphql`
       title
       excerpt
       path
+      image_type
+      image_credit_name
+      image_credit_url
       image {
         id
         extension

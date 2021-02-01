@@ -35,6 +35,7 @@ module.exports = {
 
   categoryPages: ['art', 'sci', 'throughts'],
   postsPerPage: 3,
+  defaultImageType: 'Image',
 
   twitter: '@griff_rees', // Twitter username
   twitterUrl: 'https://twitter.com/griff_rees',

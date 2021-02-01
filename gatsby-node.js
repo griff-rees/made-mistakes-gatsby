@@ -186,6 +186,11 @@ exports.createSchemaCustomization = ({ actions }) => {
       image: File @fileByRelativePath
       fallback_raster: File @fileByRelativePath
       thumbnail: File @fileByRelativePath
+      alt: String
+      image_title: String
+      image_type: String
+      image_credit_name: String
+      image_credit_url: String
       published: Boolean
       toc: Boolean
       featured: Boolean
@@ -194,8 +199,9 @@ exports.createSchemaCustomization = ({ actions }) => {
       hide_meta: Boolean
       _parent: String!
       gallery_categories: [String]
-      image_title: String
-      alt: String
+      gallery_default_type: String
+      gallery_default_credit_name: String
+      gallery_default_credit_url: String
       order: Int
       output: Boolean
     }

@@ -162,7 +162,7 @@
   width: calc(100% - 2rem);
   margin-left: auto;
   margin-right: auto;
-
+  
   &:focus {
     outline: none;
   }
@@ -280,6 +280,42 @@
 
   @media (--large-up) {
     width: 25%;
+  }
+
+  figure {
+    margin: 0;
+  }
+
+  figcaption {
+    display: none;
+  }
+}
+
+[data-rmiz-modal-content] {
+  figcaption {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0 0;
+    font-size: var(--caption-text-size);
+    background-color: var(--caption-background-color);
+    padding: 0 1px;
+    color: var(--caption-text-color);
+
+    span{
+      font-size: inherit;
+      margin-left: .1rem;
+
+      cite, a{
+        background-color: inherit;
+        font-size: var(--caption--text-size);
+        color: inherit;
+
+        a {
+          text-decoration: var(--caption-text-decoration);
+        }
+      }
+    }
   }
 }
 

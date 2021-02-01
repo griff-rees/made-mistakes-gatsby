@@ -1,12 +1,17 @@
 ---
 title: "A Little Night Music"
-excerpt: "Directed a student production of Sondheim and Wheeler's <i>A Little Night Music</i> at the Oxford Playhouse."
+excerpt: "Directed a student production of Sondheim and Wheeler's <cite>A Little Night Music</cite> at the Oxford Playhouse."
 date:   2012-10-01
 path: /art/2012/a-little-night-music/
 image: fredrika.jpeg
 thumbnail: fredrika-thumbnail-crop.jpeg
 image_title: "Fredrika after Madame Armfeldt's death."
 alt: "Fredrika sitting next to Madame Armfeldt's wheelchair with her tuning fork."
+
+gallery_default_type: Photo
+gallery_default_credit_name: Jack Sain
+gallery_default_credit_url: https://jacksain.com/
+
 featured: true
 categories: [art]
 tags: [theatre, directing]
@@ -135,44 +140,59 @@ extra_details:
         url: https://issuu.com/oxfordplayhouse/docs/op_whats_on_autumn_2012
 
 gallery:
-  - title: "Madame Armfeldt casting a spell."
+  - title: "Madame Armfeldt casting a spell to start the overture."
     alt: "Madame Armfeldt on a wheelchair holding up a tuning fork."
     image: madame-armfeldt.jpeg
-  - title: "Carl-Magnus bubbling with fury."
+  - title: "Carl-Magnus bubbling with fury singing <cite>In Praise of Women</cite>."
     alt: Man holding gloves and singing.
     image: carl-magnus.jpeg
   - title: "Anne and Charlotte stroll with Fredrik."
     alt: Two women and a man walking with umbrellas.
     image: anne-charlotte-fredrick.jpeg
-  - title: "Lieder chorus guiding Desire's Glamorous Life."
+  - title: "Lieder chorus singing <cite>Glamorous Life</cite>."
+    alt: "Two women standing and a man sitting between them. All singing and formally dressed."
     image: lieder-glamorous-life.jpeg
   - title: "Petra teasing Anne."
+    alt: "A girl sitting anxiously as another grins over her shoulder."
     image: petra-and-anne.jpeg
-  - title: "Lieder singers playing croquet from the top of act two."
+  - title: "Lieder singers playing croquet at the top of act two."
+    alt: "Three women sitting and singing while holding croquet sticks in front of them."
     image: women-trio-lieder-croquet.jpeg
-  - title: "Desire's Send in the Clowns."
+  - title: "Desirée sings <cite>Send in the Clowns</cite>."
+    alt: "Woman in a formal dress sadly singing while seated on a bed."
     image: desiree-send-in-clowns.jpeg
   - title: "Anne rushes to Henrik after his fall."
+    alt: "Girl upset looks down over man lying down with eyes closed."
     image: anne-henrik-fall.jpeg
-  - title: "Desirée's Send in the Clowns."
+  - title: "Anne and Hendrik finally together."
+    alt: "A boy is kneeling behind a girl and helping her take off a jacket."
     image: anne-henrik.jpeg
-  - title: "Desirée and Fredrik kiss before Send in the Clowsn."
+  - title: "Desirée and Fredrik kiss just before <cite>Send in the Clowns</cite>."
+    alt: "Man and woman kissing passionately."
     image: desiree-fredrick.jpeg
   - title: "Desirée and Fredrik arrange meeting after duping Carl."
+    alt: "Woman and man in formal dress closely facing each other clasping hands."
     image: desiree-fredrick-arrange-meeting.jpeg
-  - title: "Fredrik break's Desirée's heart (again)."
+  - title: "Fredrik breaks Desirée's heart (again)."
+    alt: "Woman and man sitting on bed facing each other and talking."
     image: desiree-fredrick-rejection.jpeg
-  - title: "Henrik's entrance to Weekend in the Country at the finale of Act I."
+  - title: "Henrik's entrance in <cite>Weekend in the Country</cite> (finale of Act I)."
+    alt: "Five men and four women standing on a stage singing out to the audience."
     image: lieder-charlotte-carl-henrik.jpeg
   - title: "Madame Armfeldt and Lieder ensemble trying costumes."
     image: madame-armfeldt-lieder.jpeg
-  - title: "Petra singing The Miller's Son."
+    alt: "Four women and two men in formal black clothes posed around a garden bench."
+    image_type: ''
+    image_credit_name: false
+    image_credit_url: false
+  - title: "Petra singing <cite>The Miller's Son</cite>."
+    alt: "A woman in a whiete dress, top draped open, singing out to audience midstride."
     image: petra-millers-song.jpeg
-  - title: "End Weekend in the Country, finale of Act I."
+  - title: "Ensemble closing Act I with <cite>Weekend in the Country</cite>."
+    alt: "Five women and four men singing from a stage to an audience, with another woman singing from a platform on the set and the baton of the orchestra conductor at the bottom as a wall in the set lifts up at the back."
     image: weekend-in-the-country.jpeg
 ---
-Directed a student production of Sondheim and Wheeler's *A Little Night
-Music*. Short listed for the National Student Drama Festival. Photos by
-[Jack Saine](https://jacksain.com/pictures/).
+Directed a student production of Sondheim and Wheeler's <cite>A Little Night
+Music</cite>. Short listed for the National Student Drama Festival.
 
 <!-- `youtube: https://www.youtube.com/watch?v=kysXoCtU8O4` -->

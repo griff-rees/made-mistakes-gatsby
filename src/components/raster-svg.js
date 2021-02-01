@@ -9,7 +9,7 @@ const svgWrapperStyle = {
   height: '100%',
 }
 
-const RasterOrSVG = (props) => {
+const RasterOrSVG = props => {
   const {
     imageSharp,
     extension,
@@ -22,20 +22,18 @@ const RasterOrSVG = (props) => {
   } = props
   if (extension === 'svg' && publicURL) {
     return (
-      <div
+      <picture
         className={`${className} gatsby-image-wrapper`}
         style={svgWrapperStyle}
       >
-        <picture>
-          <source type="image/svg+xml" srcSet={publicURL} />
-          <img
-            src={fallbackRaster ? fallbackRaster.childImageSharp.fixed.src : ''}
-            alt={alt}
-            title={title}
-            style={style}
-          />
-        </picture>
-      </div>
+        <source type="image/svg+xml" srcSet={publicURL} />
+        <img
+          src={fallbackRaster ? fallbackRaster.childImageSharp.fixed.src : ''}
+          alt={alt}
+          title={title}
+          style={style}
+        />
+      </picture>
     )
   }
   return <Img fluid={imageSharp.fluid} alt={alt} {...props} />

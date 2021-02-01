@@ -28,13 +28,19 @@ const PostTemplate = ({ data, pageContext }) => {
       path,
       image,
       fallback_raster,
-      image_title,
       alt,
+      image_title,
+      image_type,
+      image_credit_name,
+      image_credit_url,
       excerpt,
       tags,
       toc,
       extra_details,
       gallery,
+      gallery_default_type,
+      gallery_default_credit_name,
+      gallery_default_credit_url,
       comments: commentsEnabled,
       comments_locked: commentsLocked,
       hide_meta: hideMeta,
@@ -60,6 +66,15 @@ const PostTemplate = ({ data, pageContext }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
   })
+
+  const titleImageType =
+    image_type || gallery_default_type || site.defaultImageType
+  const titleImageCredit = image_credit_name || gallery_default_credit_name
+  const titleImageCreditURL = image_credit_url || gallery_default_credit_url
+
+  const galleryDefaultImageType = gallery_default_type || site.defaultImageType
+  const galleryDefaultCredit = gallery_default_credit_name || image_credit_name
+  const galleryDefaultCreditURL = gallery_default_credit_url || image_credit_url
 
   return (
     <Layout>
@@ -92,13 +107,22 @@ const PostTemplate = ({ data, pageContext }) => {
           fallbackRaster={fallback_raster}
           imageTitle={image_title}
           alt={alt}
+          titleImageType={titleImageType}
+          titleImageCredit={titleImageCredit}
+          titleImageCreditURL={titleImageCreditURL}
           html={html}
           tags={tags}
           extraDetails={extra_details}
           previousPost={previous}
           nextPost={next}
         />
-        <Gallery galleryPosts={galleryPosts} galleryFrontmatter={gallery} />
+        <Gallery
+          galleryPosts={galleryPosts}
+          galleryFrontmatter={gallery}
+          galleryDefaultCreditType={galleryDefaultImageType}
+          galleryDefaultCreditName={galleryDefaultCredit}
+          galleryDefaultCreditURL={galleryDefaultCreditURL}
+        />
         <section className={style.comments}>
           {commentsEnabled && (
             <>
@@ -184,11 +208,17 @@ export const pageQuery = graphql`
         }
         alt
         image_title
+        image_type
+        image_credit_name
+        image_credit_url
         toc
         comments
         comments_locked
         hide_meta
         ...galleryByFrontmatterFragment
+        gallery_default_type
+        gallery_default_credit_name
+        gallery_default_credit_url
         gallery_categories
       }
       id

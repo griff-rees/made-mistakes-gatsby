@@ -92,6 +92,11 @@
   --sci-color-inverted: color-mod(var(--sci-color) lightness(72.5%)); /*#b2a3ce*/
   --sci-color-overlay: #b2a3ce;
   --accent-color: #f00;
+
+  --caption-background-color: color-mod(var(--background-color) alpha(50%));
+  --caption-text-size: 4px;
+  --caption-text-decoration: solid underline black 1px;
+  --caption-text-color: color-mod(#111 alpha(80%));
 }
 
 /* Dark mode */
