@@ -6,7 +6,7 @@ date:   2012-10-01
 path: /art/2012/a-little-night-music/
 image: fredrika.jpeg
 thumbnail: fredrika-thumbnail-crop.jpeg
-image_title: "Fredrika after Madame Armfeldt's death."
+image_title: "Fredrika mourning Madame Armfeldt's death."
 alt: "Fredrika sitting next to Madame Armfeldt's wheelchair with her tuning fork."
 
 gallery_default_type: Photo
