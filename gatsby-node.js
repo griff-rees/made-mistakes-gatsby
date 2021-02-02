@@ -177,6 +177,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     type Frontmatter {
       title: String!
       date: Date @dateformat
+      credit_verb: String
       last_modified_at: Date @dateformat
       author: String
       path: String!

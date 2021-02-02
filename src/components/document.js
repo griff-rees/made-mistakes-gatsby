@@ -13,6 +13,7 @@ const _ = require('lodash-addons')
 const Document = ({
   title,
   hideMeta,
+  creditVerb,
   datePublished,
   dateModified,
   dateFromNow,
@@ -32,6 +33,7 @@ const Document = ({
   extraDetails,
   html,
 }) => {
+  const presentedVerb = dateModified ? 'Updated' : creditVerb || 'Published'
   return (
     <article className={`${style.document} h-entry`}>
       <div className={style.title}>
@@ -41,7 +43,7 @@ const Document = ({
             <span>
               {author && (
                 <>
-                  {dateModified ? `Updated` : `Published`}{' '}
+                  {presentedVerb}{' '}
                   <span style={{ display: 'none' }}>
                     by{' '}
                     <a className="p-author h-card" href={author.url}>
@@ -130,6 +132,7 @@ const Document = ({
 Document.propTypes = {
   title: PropTypes.string,
   hideMeta: PropTypes.bool,
+  creditVerb: PropTypes.string,
   datePublished: PropTypes.string,
   dateFromNow: PropTypes.string,
   dateModified: PropTypes.string,

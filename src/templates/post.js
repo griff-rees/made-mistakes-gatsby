@@ -20,6 +20,7 @@ const PostTemplate = ({ data, pageContext }) => {
   const {
     frontmatter: {
       title,
+      credit_verb,
       date,
       date_pretty,
       date_from_now,
@@ -93,6 +94,7 @@ const PostTemplate = ({ data, pageContext }) => {
           key={id}
           title={title}
           hideMeta={hideMeta}
+          creditVerb={credit_verb}
           datePublished={date}
           dateModified={last_modified_at}
           datePretty={date_pretty}
@@ -175,6 +177,7 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       frontmatter {
         title
+        credit_verb
         date
         date_pretty: date(formatString: "MMMM Do, YYYY")
         date_from_now: date(fromNow: true)

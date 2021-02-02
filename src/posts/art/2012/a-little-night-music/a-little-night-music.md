@@ -1,5 +1,6 @@
 ---
 title: "A Little Night Music"
+credit_verb: "Directed"
 excerpt: "Directed a student production of Sondheim and Wheeler's <cite>A Little Night Music</cite> at the Oxford Playhouse."
 date:   2012-10-01
 path: /art/2012/a-little-night-music/
