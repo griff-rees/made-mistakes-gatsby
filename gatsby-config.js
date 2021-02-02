@@ -172,7 +172,12 @@ module.exports = {
       },
     },
     'gatsby-plugin-css-customs',
-    'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-transformer-sharp',
+      options: {
+        checkSupportedExtensions: false,
+      },
+    },
     {
       resolve: 'gatsby-plugin-sharp',
       options: {
