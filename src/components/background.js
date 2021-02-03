@@ -1,13 +1,18 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
-
 import BackgroundImage from 'gatsby-background-image-es5'
+
+import style from '../styles/background-image.module.css'
 
 const BackgroundSection = ({ backgroundImage, children }) => {
   const image = backgroundImage.childImageSharp.fluid
 
-  return <BackgroundImage fluid={image}>{children}</BackgroundImage>
+  return (
+    <BackgroundImage fluid={image} className={style.background}>
+      {children}
+    </BackgroundImage>
+  )
 }
 
 BackgroundSection.propTypes = {
