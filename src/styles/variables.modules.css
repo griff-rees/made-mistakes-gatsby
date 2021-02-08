@@ -1,5 +1,3 @@
-@import "./typeface-trattatello.css";
-
 :root {
   --background-color: #fff;
   --background-secondary-color: color-mod(var(--primary-color) tint(95%));
