@@ -1,8 +1,7 @@
 @font-face {
   font-family: 'Trattatello';
+  src: url('../fonts/trattatello-webfont.woff2') format('woff2'),
+       url('../fonts/trattatello-webfont.woff') format('woff');
+  font-weight: normal;
   font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url('../../static/fonts/trattatello/trattatello-webfont.woff2') format('woff2'),
-       url('../../static/fonts/trattatello/trattatello-webfont.woff') format('woff');
 }
