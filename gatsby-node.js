@@ -1,6 +1,6 @@
 const _ = require('lodash-addons')
 const { paginate } = require('gatsby-awesome-pagination')
-const { forEach, uniq, filter, not, isNil, flatMap } = require('rambdax')
+const { forEach, uniq, filter, not, isNil, chain } = require('rambdax')
 const path = require('path')
 const sharp = require('sharp')
 
@@ -106,7 +106,7 @@ exports.createPages = ({ actions, graphql, getNodes }) => {
     const categories = ['art', 'thoughts']
     // const categories = filter(
     //   category => not(isNil(category)),
-    //   uniq(flatMap(post => post.frontmatter.categories, postsNodes))
+    //   uniq(chain(post => post.frontmatter.categories, postsNodes))
     // )
 
     forEach(category => {
@@ -134,7 +134,7 @@ exports.createPages = ({ actions, graphql, getNodes }) => {
     // Create tag pages
     const tags = filter(
       tag => not(isNil(tag)),
-      uniq(flatMap(post => post.frontmatter.tags, postsNodes))
+      uniq(chain(post => post.frontmatter.tags, postsNodes))
     )
 
     forEach(tag => {
