@@ -3,6 +3,7 @@ title: "What tech do you use?"
 excerpt: "My dev setup, gear and software."
 path: /faqs/tech/
 date: 2022-02-11
+order: 2
 ---
 
 I don't have anything close to [Michael Rose's](https://mademistakes.com/uses/) detail but if you're interested:
@@ -30,10 +31,10 @@ I don't have anything close to [Michael Rose's](https://mademistakes.com/uses/) 
 
 ## Creative
 
-- **Adobe Creative Suite** - Premier, InDesign, Illustrator, occasionally AfterEffects and Photoshop.
 - **[Inkscape](https://inkscape.org)** - Great for SVGs, especially for the web
 - **[GIMP](https://www.gimp.org)** - Terrible name, great for basic bitmaps
 - **[FiLMiCPro](https://www.filmicpro.com)** - iPhone video doesn't cut it by itself[^filmic].
+- **Adobe Creative Suite** - Premier, InDesign, Illustrator, occasionally AfterEffects and Photoshop.
 - **[DaVinci Resolve](https://www.blackmagicdesign.com/products/davinciresolve/)** for quick stuff and grading
 
 ## This site
