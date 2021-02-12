@@ -3,6 +3,7 @@ title: "What tech do you use?"
 excerpt: "My dev setup, gear and software."
 path: /faqs/tech/
 date: 2022-02-11
+type: other
 order: 2
 ---
 
