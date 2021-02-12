@@ -18,8 +18,7 @@ const FaqsPage = ({
     <SEO
       title={`Frequently asked questions | ${site.titleAlt}`}
       path="/faqs/"
-      description="Because no one likes to repeat things here's a compilation
-      of answers to questions I'm often asked."
+      description="Answers to questions I'm often asked."
       metaImage={metaImage}
     />
     <main className={style.main}>
@@ -30,11 +29,10 @@ const FaqsPage = ({
       </div>
       <div className={style.content}>
         <p>
-          Did I leave something out that you were looking for an answer to? Feel
-          free to reach out and <Link to="/contact/">ask me</Link>.
+          Got more questions? <Link to="/contact/">Ask me</Link>.
         </p>
         <ul>
-          {edges.map(faq => (
+          {edges.map(({ faq }) => (
             <li key={faq.node.id}>
               <Link to={faq.node.frontmatter.path}>
                 {faq.node.frontmatter.title}
