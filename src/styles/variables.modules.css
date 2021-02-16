@@ -95,7 +95,7 @@
   --sci-color-overlay: #b2a3ce;
   --accent-color: #f00;
 
-  --caption-text-color: color-mod(var(--background-color) alpha(80%));
+  --caption-text-color: color-mod(var(--background-color) alpha(75%));
   --caption-text-size: 4px;
   --caption-text-decoration: solid underline black 1px;
   --caption-background-color: color-mod(#111 alpha(80%));
