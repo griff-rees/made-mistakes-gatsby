@@ -302,7 +302,7 @@
     bottom: 0;
     right: 0;
     margin: 0 0;
-    width: fit-content;
+    width: auto;
     font-size: var(--caption-text-size);
     background-color: var(--caption-background-color);
     padding: 0 1px;
