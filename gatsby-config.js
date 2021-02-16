@@ -211,12 +211,13 @@ module.exports = {
             options: {
               maxWidth: 1100,
               quality: 75,
-              wrapperStyle: `background-color: var(--input-background-color);`,
-              disableBgImage: true,
-              backgroundColor: 'none',
+              // wrapperStyle: `background-color: var(--input-background-color);`,
+              backgroundColor: `none`,
               tracedSVG: false,
               loading: 'lazy',
               linkImagesToOriginal: false,
+              showCaptions: ['title'],
+              markdownCaptions: true,
             },
           },
           {

@@ -226,6 +226,11 @@
       0.75em 0.5em 2em 0.5em var(--shadow-color);
   }
 
+  figcaption {
+    margin-top: 1rem;
+    text-align: left;
+  }
+
   table {
     max-width: var(--text-width);
   }
@@ -297,6 +302,7 @@
     bottom: 0;
     right: 0;
     margin: 0 0;
+    width: fit-content;
     font-size: var(--caption-text-size);
     background-color: var(--caption-background-color);
     padding: 0 1px;

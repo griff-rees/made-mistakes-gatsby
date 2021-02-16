@@ -216,11 +216,15 @@ figure {
 }
 
 figcaption {
-  /* position: relative; */
-  margin: 0.25rem 0;
   font-size: var(--text-xs);
-  display: flex;
-  justify-content: flex-end;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: var(--text-width);
+  text-align: right;
+
+  > div {
+    display: inline;
+  }
 
   > span {
     margin-left: .25rem;
