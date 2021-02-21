@@ -40,9 +40,7 @@ const Tags = ({
       <SEO
         title={`${tag}${paginationTitle} - ${site.title}`}
         path={`/tag/${_.slugify(tag)}/`}
-        description={
-          taxonomyExcerpt || `An archive of pages related to ${tag}.`
-        }
+        description={taxonomyExcerpt || `Pages related to ${tag}.`}
         metaImage={metaImage}
       />
       <main id="main" className={style.main}>

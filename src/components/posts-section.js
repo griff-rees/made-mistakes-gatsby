@@ -1,6 +1,6 @@
 import React from 'react'
-import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
+import { graphql } from 'gatsby'
 import Entry from './entry'
 
 import style from '../styles/archive.module.css'

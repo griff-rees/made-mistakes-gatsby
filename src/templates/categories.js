@@ -1,12 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import SEO from '../components/seo'
 import Layout from '../components/layout'
 // import Entry from '../components/entry'
 import PostsSection from '../components/posts-section'
 import BannerSection from '../components/banner'
 import Pagination from '../components/pagination'
+import TagTable from '../components/tag-table'
 // import Github
 // import instagram
 
@@ -38,9 +39,9 @@ const Categories = ({
       links: taxonomyLinks,
       show_featured: taxonomyFeatured,
     },
-    allMarkdownRemark: { group, edges: posts },
     featuredPosts,
     paginatedPosts,
+    categoryTags,
   } = data
   const paginationTitle =
     humanPageNumber === 1
@@ -48,22 +49,12 @@ const Categories = ({
       : ` - Page ${humanPageNumber} of ${numberOfPages}`
   const metaImage = site.image
 
-  // Sort object alphabetically function
-  const propComparator = (propName) => (a, b) =>
-    a[propName].toLowerCase() === b[propName].toLowerCase()
-      ? 0
-      : a[propName].toLowerCase() < b[propName].toLowerCase()
-      ? -1
-      : 1
-
   return (
     <Layout>
       <SEO
         title={`${taxonomyName}${paginationTitle} - ${site.title}`}
         path={`/${_.slugify(category)}/`}
-        description={
-          taxonomyExcerpt || `An archive of posts related to ${taxonomyName}.`
-        }
+        description={taxonomyExcerpt || `Posts related to ${taxonomyName}.`}
         metaImage={metaImage}
       />
       <main id="main" className={style.main}>
@@ -77,7 +68,7 @@ const Categories = ({
           links={taxonomyLinks}
         />
         <div className={style.content}>
-          {taxonomyFeatured && (
+          {taxonomyFeatured && humanPageNumber === 1 && (
             <PostsSection
               posts={featuredPosts}
               sectionTitle="Featured"
@@ -85,21 +76,7 @@ const Categories = ({
               defaultAuthor={siteAuthor}
             />
           )}
-          <h2 className={style.subHeading}>
-            <span>Browse</span>
-          </h2>
-          <div className={style.columnList} style={{ marginBottom: '3rem' }}>
-            <ul>
-              {group.sort(propComparator(`fieldValue`)).map((tag) => (
-                <li key={tag.fieldValue}>
-                  <Link to={`/tag/${_.slugify(tag.fieldValue)}/`}>
-                    <strong>{tag.fieldValue}</strong>{' '}
-                    <span className={style.count}>{tag.totalCount}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <TagTable tags={categoryTags} />
           <PostsSection
             posts={paginatedPosts}
             sectionTitle="Recent"
@@ -144,48 +121,9 @@ export const postsQuery = graphql`
       ...BannerFragment
       show_featured
     }
+    ...CategoryTagsFragment
     ...FeaturedPostsFragment
     ...PaginatedPostsFragment
-    allMarkdownRemark(
-      filter: {
-        frontmatter: {
-          categories: { in: [$category] }
-          published: { ne: false }
-        }
-      }
-      sort: { fields: [frontmatter___date], order: DESC }
-      limit: $limit
-      skip: $skip
-    ) {
-      group(field: frontmatter___tags) {
-        fieldValue
-        totalCount
-      }
-      edges {
-        node {
-          id
-          excerpt(format: HTML)
-          timeToRead
-          frontmatter {
-            title
-            date
-            date_pretty: date(formatString: "MMMM Do, YYYY")
-            date_from_now: date(fromNow: true)
-            path
-            author
-            excerpt
-            categories
-            image {
-              childImageSharp {
-                fluid(maxWidth: 760, quality: 75) {
-                  ...GatsbyImageSharpFluid_noBase64
-                }
-              }
-            }
-          }
-        }
-      }
-    }
   }
 `
 
