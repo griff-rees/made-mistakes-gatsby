@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
-import Img from 'gatsby-image'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Entry from '../components/entry'
@@ -142,18 +141,18 @@ const HomePage = ({ data }) => {
             <ul className={`${style.gridListExpanded} ${style.navList}`}>
               <li key="art">
                 <Entry
-                  key="arts-home-link"
+                  key="art-home-link"
                   title="Art"
                   path="/art/"
                   excerpt="Theatre, film, writing and design. Some
                   collaboration with research."
                 />
               </li>
-              <li key="research">
+              <li key="sci-home-link">
                 <Entry
-                  key="research-home-link"
+                  key="sci-home-link"
                   title="Research"
-                  path="/research/"
+                  path="/sci/"
                   excerpt="Testing hypotheses in social and data
                            sciences. Occasional brushes with art."
                 />
