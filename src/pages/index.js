@@ -33,18 +33,18 @@ const HomePage = ({ data }) => {
             <h1 className={style.heading}>
               <span className={style.home}>
                 The{' '}
-                <a href="/art/" className="art">
+                <Link to="/art/" className="art">
                   art
-                </a>
+                </Link>
                 ,{' '}
-                <a href="/sci/" className="sci">
+                <Link to="/sci/" className="sci">
                   research
-                </a>{' '}
-                and <a href="/thoughts/">thoughts</a> of{' '}
-                <a href="/about/">Griffith&nbsp;Rees</a>
-                <a href="http://box3spool5.org" className="accent">
+                </Link>{' '}
+                and <Link to="/thoughts/">thoughts</Link> of{' '}
+                <Link to="/about/">Griffith&nbsp;Rees</Link>
+                <Link to="http://box3spool5.org" className="accent">
                   .
-                </a>
+                </Link>
               </span>
             </h1>
             <div className={style.intro}>
