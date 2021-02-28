@@ -2,10 +2,6 @@
   <style>
     #g {
       fill: #f69220;
-
-      @media (prefers-color-scheme: dark) {
-        fill: #fabd78;
-      }
     }
 
     #dots {
@@ -16,8 +12,14 @@
     #r {
       fill: #7157a4;
       stroke-width: 1.1; 
+    }
 
-      @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: dark) {
+      #g {
+        fill: #fabd78;
+      }
+
+      #r {
         fill: #b2a3ce;
       }
     }
