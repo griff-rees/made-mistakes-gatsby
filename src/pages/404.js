@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
@@ -10,7 +11,7 @@ const NotFoundPage = () => (
   <Layout>
     <SEO
       title={`Page not found - ${site.titleAlt}`}
-      description="Sorry, but the pixels you are looking for are in another castle."
+      description="Where 404 art though?"
       metaImage={site.image}
     />
     <main id="main" className={style.main}>
@@ -20,7 +21,13 @@ const NotFoundPage = () => (
         </h1>
       </div>
       <div className={style.content}>
-        <p>Sorry, but the pixels you are looking for are in another castle.</p>
+        <p>
+          Where 404{' '}
+          <Link to="/art/" className="art">
+            art
+          </Link>{' '}
+          though?
+        </p>
       </div>
     </main>
   </Layout>
