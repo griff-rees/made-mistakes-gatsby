@@ -35,18 +35,20 @@ I don't have anything close to [Michael Rose's](https://mademistakes.com/uses/) 
 
 ## Creative
 
-- [**Inkscape**](https://inkscape.org) - Great for SVGs, especially for the web
-- [**GIMP**](https://www.gimp.org) - Terrible name, great for basic bitmaps
-- [**FiLMiCPro**](https://www.filmicpro.com) - iPhone video doesn't cut it by itself[^filmic].
+- [**QLab**](https://qlab.app/) - Sound, video and [now](https://qlab.app/docs/v4/lighting/introduction-to-lighting/) [lighting](https://www.onstagelighting.co.uk/lighting-equipment/stage-lighting-control/qlab-4-lighting-workflow-ideas/) cues
+- [**FiLMiC Pro**](https://www.filmicpro.com) - iPhone video doesn't cut it by itself[^filmic]
+- [**DaVinci Resolve**](https://www.blackmagicdesign.com/products/davinciresolve/) - Grading and increasingly sophisticated editing
+- [**Inkscape**](https://inkscape.org) - Great for vector graphics like [SVGs](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics), especially for the web
+- [**GIMP**](https://www.gimp.org) - [Recursive](https://en.wikipedia.org/wiki/Recursive_acronym) [ridiculous](https://en.wikipedia.org/wiki/GIMP#History) name, great for photos
 - **Adobe Creative Suite** - Premier, InDesign, Illustrator, occasionally AfterEffects and Photoshop.
-- [**DaVinci Resolve**](https://www.blackmagicdesign.com/products/davinciresolve/) for quick stuff and grading
 
 ## This site
 
 - Hosting via [**Netlify**][netlify].
 - Domain names via [**porkbun**][porkbun].
 
-<small>Page may contain affiliate and/or referral links. For more information read my <a href="/terms/#disclosure-policy">disclosure policy</a>.</small>
+[[notice | [Nota bene (NB)](https://en.wikipedia.org/wiki/Nota_bene)]]
+| This page may contain affiliate and/or referral links. For more information read my [disclosure policy](/terms/#disclosure-policy).
 
 [^learned-from]: These are both [from source distributions](https://en.wikipedia.org/wiki/Category:Source-based_Linux_distributions) I haven't used in years. But: cumbersome as they can be, I learned *a lot* about [\*nix][nix] from them.
 [^filmic]: Decent app but maybe make the cApITaLIzAtion easier to type :P?
