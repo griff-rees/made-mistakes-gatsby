@@ -2,7 +2,7 @@
 title: "Terms and policies"
 path: /terms/
 date: 2021-01-18
-last_modified_at: 2021-01-18T16:24:14
+last_modified_at: 2021-02-28T22:26:27
 excerpt: "Privacy policy, license, and other legal stuff."
 toc: false
 ---
