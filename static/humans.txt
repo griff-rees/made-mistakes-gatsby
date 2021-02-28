@@ -1,16 +1,24 @@
-_  ________ ____   _  ______________  _________
-|\/||__||  \|___   |\/||[__  | |__||_/ |___[__
-|  ||  ||__/|___   |  ||___] | |  || \_|______]
 
-  MADEMISTAKES.COM
+╔═╗┬─┐┬┌─┐┌─┐┬┌┬┐┬ ┬  ╦═╗┌─┐┌─┐┌─┐
+║ ╦├┬┘│├┤ ├┤ │ │ ├─┤  ╠╦╝├┤ ├┤ └─┐
+╚═╝┴└─┴└  └  ┴ ┴ ┴ ┴  ╩╚═└─┘└─┘└─┘
 
-  Designer:     Michael Rose
-  Twitter:      @mmistakes
-  Location:     Buffalo, New York USA
+  griffithrees.org
+
+  Designer:     Griffith Rees
+  Twitter:      @griff_rees
+  Location:     Manchester, UK
 
   Language:     English
   Built with:   Gatsby <https://www.gatsbyjs.org/>
-                Visual Studio Code <https://code.visualstudio.com/>
+                tmux <https://github.com/tmux/tmux>
+                Neovim <https://neovim.io/>
+                SpaceVim <https://spacevim.org/>
+                Inkscape <https://inkscape.org/>
+                GIMP <https://www.gimp.org/>
                 Adobe Creative Suite <https://www.adobe.com/>
-                Travis CI <https://travis-ci.org/>
+                Github <https://github.com/>
                 Netlify <https://www.netlify.com/>
+                Text to ASCII <https://patorjk.com/software/taag>
+
+  Forked from:  https://mademistakes.com/
