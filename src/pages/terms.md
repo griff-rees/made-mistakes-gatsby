@@ -67,7 +67,7 @@ Like this website, my disclosure policy is a work in progress. As the revenue st
 
 ## License
 
-All original content (e.g. articles, blog posts, artwork, code video and photographs) available on **griffithrees.org** is released under a [Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License](http://creativecommons.org/licenses/by-nc-nd/3.0/deed.en_US) unless otherwise noted. Basically this means as you as you include a link here alongside, you are free to share, transmit, distribute, alter, transform, and build on my work as long as you don't use it for commercial purposes without my prior written consent.
+All original content (e.g. blog posts, artwork, code, video and photographs) available on **griffithrees.org** is released under a [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)](https://creativecommons.org/licenses/by-nc-nd/4.0/) license unless otherwise noted. This means you can present my content if you include a link here alongside. You are free to share, transmit, distribute, and build on my work as long as you don't use it for commercial purposes without my prior written consent.
 
 ### Attribution
 
