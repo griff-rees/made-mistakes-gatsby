@@ -21,30 +21,35 @@ I don't have anything close to [Michael Rose's](https://mademistakes.com/uses/) 
 - [pipenv](https://pipenv.pypa.io/en/latest/) for basic to published projects
 - [pyup](https://pyup.io) to keep work up to date and secure
 - Web Frameworks 
-  1. [Django](https://www.djangoproject.com) is my goto webframework
-  2. [Gatsby](https://www.gatsbyjs.com) for this site and learning *some* js
-- Operating systems ((\*nix)[https://en.wikipedia.org/wiki/Unix-like]): 
-  1. **macOS**
-  2. **[Debian](https://www.debian.org)**
-  3. **[Ubuntu](https://ubuntu.com)**
-  4. **[Alpine](https://alpinelinux.org)**
-  5. **[Arch](https://archlinux.org)**
+  1. [Django](https://www.djangoproject.com) is my goto [web framework](https://en.wikipedia.org/wiki/Web_framework)
+  2. [Gatsby](https://www.gatsbyjs.com) for this site and learning *some* javascript
+- Operating systems ([\*nix-y][nix]): 
+  - **macOS**
+  - [**Debian**](https://www.debian.org)
+  - [**Ubuntu**](https://ubuntu.com)
+  - [**Alpine**](https://alpinelinux.org)
+  - [**Arch**](https://archlinux.org)
+  - [**Gentoo**](https://www.gentoo.org/)[^learned-from]
+  - [**Linux From Scratch**](http://www.linuxfromscratch.org/)[^learned-from]
+
 
 ## Creative
 
-- **[Inkscape](https://inkscape.org)** - Great for SVGs, especially for the web
-- **[GIMP](https://www.gimp.org)** - Terrible name, great for basic bitmaps
-- **[FiLMiCPro](https://www.filmicpro.com)** - iPhone video doesn't cut it by itself[^filmic].
+- [**Inkscape**](https://inkscape.org) - Great for SVGs, especially for the web
+- [**GIMP**](https://www.gimp.org) - Terrible name, great for basic bitmaps
+- [**FiLMiCPro**](https://www.filmicpro.com) - iPhone video doesn't cut it by itself[^filmic].
 - **Adobe Creative Suite** - Premier, InDesign, Illustrator, occasionally AfterEffects and Photoshop.
-- **[DaVinci Resolve](https://www.blackmagicdesign.com/products/davinciresolve/)** for quick stuff and grading
+- [**DaVinci Resolve**](https://www.blackmagicdesign.com/products/davinciresolve/) for quick stuff and grading
 
 ## This site
 
-- Hosting and forms via [**Netlify**][netlify].
-- Domain name registered via [**porkbun**][porkbun].
+- Hosting via [**Netlify**][netlify].
+- Domain names via [**porkbun**][porkbun].
 
 <small>Page may contain affiliate and/or referral links. For more information read my <a href="/terms/#disclosure-policy">disclosure policy</a>.</small>
 
-[netlify]: https://www.netlify.com/
-[porkbun]: https://porkbun.com
+[^learned-from]: These are both [from source distributions](https://en.wikipedia.org/wiki/Category:Source-based_Linux_distributions) I haven't used in years. But: cumbersome as they can be, I learned *a lot* about [\*nix][nix] from them.
 [^filmic]: Decent app but maybe make the cApITaLIzAtion easier to type :P?
+[netlify]: https://www.netlify.com
+[porkbun]: https://porkbun.com
+[nix]: https://en.wikipedia.org/wiki/Unix-like
