@@ -28,6 +28,7 @@
 .primaryMenuItem {
   display: flex;
   margin: 0;
+  font-family: var(--serif-font);
 
   a {
     display: block;
@@ -38,20 +39,16 @@
     text-decoration: none;
   }
 
-  a,
-  a:visited {
-    color: var(--text-color);
-    font-family: var(--serif-font);
-  }
-
   a.art {
     color: var(--art-color);
     font-family: var(--art-font);
+    font-size: var(--base-font-size);
   }
 
   a.sci {
     color: var(--sci-color);
     font-family: var(--sci-font);
+    font-weight: bold;
   }
 
   a:focus,

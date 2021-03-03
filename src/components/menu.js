@@ -16,7 +16,7 @@ const MainMenu = ({ mainMenu }) => {
           textDecorationColor: 'var(--text-color)',
         }}
         partiallyActive
-        className={menuItem.category ? menuItem.path.slice(1, -1) : null}
+        className={menuItem.category ? style[menuItem.path.slice(1, -1)] : null}
       >
         {menuItem.title}
       </Link>
