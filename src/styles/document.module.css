@@ -305,7 +305,7 @@
     width: auto;
     font-size: var(--caption-text-size);
     background-color: var(--caption-background-color);
-    padding: 0 1px;
+    padding: 1px;
     color: var(--caption-text-color);
 
     span{

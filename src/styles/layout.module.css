@@ -221,14 +221,21 @@ figcaption {
   margin-left: auto;
   max-width: var(--text-width);
   text-align: right;
+  color: var(--caption-text-color);
 
-  > div {
+  > div, p {
     display: inline;
   }
 
   > span {
     margin-left: .25rem;
+    display: inline-block;
   }
+
+  a {
+    color: inherit;
+  }
+
 }
 
 img {

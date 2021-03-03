@@ -7,7 +7,7 @@ const FigureCaption = ({ caption, creditName, creditURL, creditType }) => {
   if (caption || creditName) {
     return (
       <figcaption>
-        <div dangerouslySetInnerHTML={{ __html: caption }} />
+        <p dangerouslySetInnerHTML={{ __html: caption }} />
         {creditName && (
           <span>
             {creditPrefix}
