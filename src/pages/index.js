@@ -42,9 +42,9 @@ const HomePage = ({ data }) => {
                 </Link>{' '}
                 and <Link to="/thoughts/">thoughts</Link> of{' '}
                 <Link to="/about/">Griffith&nbsp;Rees</Link>
-                <Link to="http://box3spool5.org" className="accent">
+                <a href="http://box3spool5.org" className="accent">
                   .
-                </Link>
+                </a>
               </span>
             </h1>
             <div className={style.intro}>
