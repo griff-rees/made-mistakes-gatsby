@@ -220,15 +220,14 @@ figcaption {
   margin-right: auto;
   margin-left: auto;
   max-width: var(--text-width);
-  text-align: right;
   color: var(--caption-text-color);
 
   > div, p {
     display: inline;
+    margin-right: .25rem;
   }
 
   > span {
-    margin-left: .25rem;
     display: inline-block;
   }
 
