@@ -1,4 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import Octicon, { Law, Star } from '@githubprimer/octicons-react'
 
 import style from '../styles/repository.module.css'
@@ -66,6 +68,30 @@ const Repository = ({ repo }) => {
       <RepositoryFooter repo={repo} />
     </div>
   )
+}
+
+FooterItem.propTypes = {
+  children: PropTypes.array,
+}
+
+Repository.propTypes = {
+  repo: PropTypes.object,
+}
+
+RepositoryHeader.propTypes = {
+  repo: Repository.repo,
+}
+
+RepositoryDescription.propTypes = {
+  repo: Repository.repo,
+}
+
+RepositoryFooter.propTypes = {
+  repo: Repository.repo,
+  language: PropTypes.shape({
+    color: PropTypes.string,
+    name: PropTypes.string,
+  }),
 }
 
 export default Repository
